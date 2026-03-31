@@ -131,94 +131,39 @@
     </div>
 </section>
 
-<!-- LIVE STATS SECTION -->
-<section id="live-stats-component" class="py-12">
-    <div class="max-w-5xl mx-auto px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <!-- Members -->
-            <div class="bg-[#1e293b] p-4 rounded-lg border border-[#334155] text-center">
-                <p class="text-gray-400 text-[10px] uppercase font-bold tracking-widest mb-1">Members</p>
-                <p id="api-members" class="text-2xl font-black text-[#f3c31b]">--</p>
+<section id="stats" class="py-12 md:py-16 border-y border-slate-800">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-10">
+            <div class="text-center p-2">
+                <p data-emojis data-emoji-size="30px" class="text-2xl md:text-4xl font-black text-white">:member: 37/50</p>
+                <p class="text-slate-400 font-bold uppercase text-[10px] md:text-xs tracking-widest mt-1">Members</p>
             </div>
-            <!-- Trophies -->
-            <div class="bg-[#1e293b] p-4 rounded-lg border border-[#334155] text-center">
-                <p class="text-gray-400 text-[10px] uppercase font-bold tracking-widest mb-1">Clan Trophies</p>
-                <p id="api-trophies" class="text-2xl font-black text-[#f3c31b]">--</p>
+
+            <div class="text-center p-2">
+                <p data-emojis data-emoji-size="30px" class="text-2xl md:text-4xl font-black text-white">:warleag: Unranked</p>
+                <p class="text-slate-400 font-bold uppercase text-[10px] md:text-xs tracking-widest mt-1">War League</p>
             </div>
-            <!-- War Wins -->
-            <div class="bg-[#1e293b] p-4 rounded-lg border border-[#334155] text-center">
-                <p class="text-gray-400 text-[10px] uppercase font-bold tracking-widest mb-1">War Wins</p>
-                <p id="api-wins" class="text-2xl font-black text-[#f3c31b]">--</p>
+
+            <div class="text-center p-2">
+                <p data-emojis data-emoji-size="32px" class="text-2xl md:text-4xl font-black text-white">:clan: 4</p>
+                <p class="text-slate-400 font-bold uppercase text-[10px] md:text-xs tracking-widest mt-1">Past Wars</p>
             </div>
-            <!-- Requirements -->
-            <div class="bg-[#1e293b] p-4 rounded-lg border border-[#334155] text-center">
-                <p class="text-gray-400 text-[10px] uppercase font-bold tracking-widest mb-1">Required</p>
-                <p id="api-req" class="text-2xl font-black text-[#f3c31b]">--</p>
+
+            <div class="text-center p-2">
+                <p data-emojis data-emoji-size="32px" class="text-2xl md:text-4xl font-black text-white">:troopdonations: 1,428+</p>
+                <p class="text-slate-400 font-bold uppercase text-[10px] md:text-xs tracking-widest mt-1">Donations</p>
             </div>
         </div>
-        <p id="api-status" class="text-[10px] text-gray-600 mt-4 text-center italic">Loading live data...</p>
+
+        <div class="max-w-md mx-auto">
+            <a href="https://claneasy.com/clan/2JU29J22P/overview">
+                <button class="btn-gold text-white w-full py-4 rounded-xl font-black uppercase tracking-widest flex items-center justify-center gap-2 group transition-transform hover:scale-[1.02] active:scale-95 shadow-lg shadow-yellow-900/20">
+                    View More Stats
+                    <p data-emojis>:link:</p>
+                </button>
+            </a>
+        </div>
     </div>
-
-    <script>
-        (function() {
-            const CONFIG = {
-                tag: "2JU29J22P",
-                key: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjFlZTA2YTA3LTk3NzQtNDEyNi05MGVhLWZjMGY5NGEzMjViNCIsImlhdCI6MTc3NDkzODI3NSwic3ViIjoiZGV2ZWxvcGVyLzZlOTA3ZDU2LWViMTUtYjk5Mi0wYjE2LTIwMGZjMjU3ZTFiYiIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjQ1Ljc5LjIxOC43OSJdLCJ0eXBlIjoiY2xpZW50In1dfQ.aBlOgePCIHmh9camxNh7WL3asjghUjjlJgXJSp46EmKCDjN9UNc9fKtabmgfzmNI1FM0HptXgdQg-FDA5bnrYQ" 
-            };
-
-            async function refreshStats() {
-                const status = document.getElementById('api-status');
-                
-                // Logic fix: Only use demo mode if key is missing or explicitly the placeholder string
-                if (!CONFIG.key || CONFIG.key.length < 50 || CONFIG.key.includes("PASTE_YOUR")) {
-                    status.innerText = "Demo Mode: Check API Key configuration.";
-                    document.getElementById('api-members').innerText = "37/50";
-                    document.getElementById('api-trophies').innerText = "18,450";
-                    document.getElementById('api-wins').innerText = "12";
-                    document.getElementById('api-req').innerText = "1200";
-                    return;
-                }
-
-                try {
-                    const clanTagEncoded = encodeURIComponent("#" + CONFIG.tag);
-                    const url = `https://cocproxy.royaleapi.dev/v1/clans/${clanTagEncoded}`;
-
-                    const res = await fetch(url, {
-                        method: 'GET',
-                        headers: { 
-                            "Authorization": "Bearer " + CONFIG.key.trim(),
-                            "Accept": "application/json"
-                        }
-                    });
-
-                    if (!res.ok) {
-                        const errorData = await res.json().catch(() => ({}));
-                        throw new Error(errorData.reason || `Status ${res.status}`);
-                    }
-
-                    const data = await res.json();
-                    
-                    document.getElementById('api-members').innerText = `${data.members}/50`;
-                    document.getElementById('api-trophies').innerText = (data.clanPoints || 0).toLocaleString();
-                    document.getElementById('api-wins').innerText = data.warWins || 0;
-                    document.getElementById('api-req').innerText = (data.requiredTrophies || 0).toLocaleString();
-                    
-                    status.innerText = "Live: Stats synced successfully";
-                    status.style.color = "#10b981"; 
-                } catch (e) {
-                    console.error("Fetch error:", e);
-                    status.innerText = "Connection Error: " + e.message + ". Check if IP 45.79.218.79 is saved in Dev Portal.";
-                    status.style.color = "#ef4444"; 
-                }
-            }
-            
-            if (document.readyState === 'complete') {
-                refreshStats();
-            } else {
-                window.addEventListener('load', refreshStats);
-            }
-        })();
-    </script>
 </section>
 
 <section id="join" class="py-24 px-6">
