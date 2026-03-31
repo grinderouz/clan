@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Grinderouz223 - Clan COC</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --coc-gold: #f3c31b;
+            --coc-gold-dark: #d4a017;
+            --coc-blue: #4a90e2;
+            --coc-stone: #0f172a; 
+            --coc-stone-dark: #020617; 
+            --coc-border: #334155; 
+        }
+
+        body {
+            font-family: 'Open+Sans', sans-serif;
+            background-color: var(--coc-stone);
+            color: #f8fafc; 
+            scroll-behavior: smooth;
+        }
+
+        .coc-gradient {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+
+        .navbar {
+            background: #020617;
+            border-bottom: 3px solid var(--coc-gold);
+        }
+
+        .hero-pattern {
+            background-color: var(--coc-stone);
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+            background-blend-mode: overlay;
+        }
+
+        .btn-gold {
+            background: linear-gradient(to bottom, #f3c31b, #d4a017);
+            box-shadow: 0 4px 0 #b0840a;
+            transition: all 0.1s;
+        }
+
+        .btn-gold:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #b0840a;
+        }
+
+        .card {
+            border: 1px solid var(--coc-border);
+            border-radius: 12px;
+            background: #1e293b; 
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .clan-code-box {
+            background: #020617;
+            border: 2px dashed #475569;
+            font-family: monospace;
+        }
+
+        .stat-badge {
+            background: #1e293b;
+            border-left: 4px solid var(--coc-gold);
+        }
+
+        #copy-toast {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        #copy-toast.show {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 16px;
+            height: 16px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--coc-stone-dark);
+            border-left: 2px solid var(--coc-stone);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--coc-gold) 0%, var(--coc-gold-dark) 100%);
+            border: 3px solid var(--coc-stone-dark);
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.8);
+            cursor: pointer;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #fff275 0%, var(--coc-gold) 100%);
+            box-shadow: 0 0 10px var(--coc-gold);
+        }
+
+        ::-webkit-scrollbar-corner {
+            background: var(--coc-stone-dark);
+        }
+
+        * {
+            scrollbar-width: auto;
+            scrollbar-color: var(--coc-gold-dark) var(--coc-stone-dark);
+        }
+    </style>
+</head>
+<body class="hero-pattern">
+
+    <div id="navbar-container"></div>
+
+<section id="home" class="pt-32 pb-20 px-6 max-w-6xl mx-auto text-center">
+    <span class="bg-yellow-900/40 text-yellow-400 border border-yellow-700/50 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block">Clan Level 2</span>
+    <h1 class="text-3xl md:text-7xl font-black text-white mb-6 uppercase leading-tight tracking-wide drop-shadow-md">GRINDEROUZ223</h1>
+    <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto font-medium">A clan focused on grinding, collecting, and growing together. Join Grinderouz223!</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#join" class="btn-gold text-white px-8 py-4 rounded-xl font-black uppercase tracking-wider text-lg">Join Clan</a>
+        <a href="#rules" class="bg-[#1e293b] border-2 border-slate-600 text-slate-200 px-8 py-4 rounded-xl font-black uppercase tracking-wider text-lg hover:bg-slate-700 transition">Clan Rules</a>
+    </div>
+</section>
+
+<section id="stats" class="py-12 md:py-16 border-y border-slate-800">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-10">
+            <div class="text-center p-2">
+                <p data-emojis data-emoji-size="30px" class="text-2xl md:text-4xl font-black text-white">:member: 37/50</p>
+                <p class="text-slate-400 font-bold uppercase text-[10px] md:text-xs tracking-widest mt-1">Members</p>
+            </div>
+
+            <div class="text-center p-2">
+                <p data-emojis data-emoji-size="30px" class="text-2xl md:text-4xl font-black text-white">:warleag: Unranked</p>
+                <p class="text-slate-400 font-bold uppercase text-[10px] md:text-xs tracking-widest mt-1">War League</p>
+            </div>
+
+            <div class="text-center p-2">
+                <p data-emojis data-emoji-size="32px" class="text-2xl md:text-4xl font-black text-white">:clan: 3</p>
+                <p class="text-slate-400 font-bold uppercase text-[10px] md:text-xs tracking-widest mt-1">Past Wars</p>
+            </div>
+
+            <div class="text-center p-2">
+                <p data-emojis data-emoji-size="32px" class="text-2xl md:text-4xl font-black text-white">:troopdonations: 1,428+</p>
+                <p class="text-slate-400 font-bold uppercase text-[10px] md:text-xs tracking-widest mt-1">Donations</p>
+            </div>
+        </div>
+
+        <div class="max-w-md mx-auto">
+            <a href="https://claneasy.com/clan/2JU29J22P/overview">
+                <button class="btn-gold text-white w-full py-4 rounded-xl font-black uppercase tracking-widest flex items-center justify-center gap-2 group transition-transform hover:scale-[1.02] active:scale-95 shadow-lg shadow-yellow-900/20">
+                    View More Stats
+                    <p data-emojis>:link:</p>
+                </button>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="join" class="py-24 px-6">
+    <div class="max-w-4xl mx-auto bg-[#1e293b] rounded-3xl shadow-2xl overflow-hidden border border-slate-700">
+        <div class="md:flex">
+            <div class="md:w-1/2 p-10 bg-[#020617] text-white flex flex-col justify-center">
+                <h2 class="text-3xl font-black uppercase mb-4 text-white">Ready to Join?</h2>
+                <p class="text-slate-400 mb-6">Open Clash of Clans, go to the "Social" tab, and search for our clan tag below.</p>
+                <ul class="space-y-3 text-sm text-slate-300">
+                    <li class="flex items-center gap-2"><span class="text-yellow-400 text-lg">✔</span> Minimum TH7+</li>
+                    <li class="flex items-center gap-2"><span class="text-yellow-400 text-lg">✔</span> Active Player</li>
+                    <li class="flex items-center gap-2"><span class="text-yellow-400 text-lg">✔</span> Use Chat Atleast twice a week or two</li>
+                </ul>
+            </div>
+            <div class="md:w-1/2 p-10 flex flex-col items-center justify-center text-center">
+                <p class="text-slate-400 font-bold uppercase text-xs tracking-widest mb-4">Official Clan Tag</p>
+                <div class="clan-code-box w-full py-6 rounded-2xl mb-6 relative group shadow-inner">
+                    <span id="clanTag" class="text-3xl font-black text-white tracking-widest">#2JU29J22P</span>
+                </div>
+                <button onclick="copyTag()" class="btn-gold text-white w-full py-4 rounded-xl font-black uppercase tracking-widest flex items-center justify-center gap-2 group shadow-lg shadow-yellow-900/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                    </svg>
+                    Copy Clan Tag
+                </button>
+                <div id="copy-toast" class="mt-4 text-green-400 font-bold text-sm">Tag Copied to Clipboard!</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="rules" class="py-20 bg-transparent">
+    <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-black text-center text-white uppercase mb-12 drop-shadow-sm">Clan Expectations</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="card p-8 shadow-lg">
+                <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                    <p data-emojis data-emoji-size="30px">:activity:</p>
+                </div>
+                <h3 class="text-xl font-black text-white mb-3 uppercase">Be Active</h3>
+                <p class="text-slate-300">Be active. Chat rarely to show activity. May get kicked if noticed to inactive.</p>
+            </div>
+            <div class="card p-8 shadow-lg">
+                <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                    <p data-emojis data-emoji-size="30px">:troopdonations:</p>
+                </div>
+                <h3 class="text-xl font-black text-white mb-3 uppercase">Donations</h3>
+                <p class="text-slate-300">No specific ratio required, but contribute where you can. Max troops only for War attacks.</p>
+            </div>
+            <div class="card p-8 shadow-lg">
+                <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                    <p data-emojis data-emoji-size="30px">:community:</p>
+                </div>
+                <h3 class="text-xl font-black text-white mb-3 uppercase">Community</h3>
+                <p class="text-slate-300">Be respectful and helpful. We are a US Or Global clan, keep the chat clean and constructive.</p>
+            </div>
+        </div>
+        <div class="mt-12 flex justify-center">
+    <a href="clan-and-server-rules.html" class="bg-slate-800 border-2 border-slate-600 text-slate-200 px-8 py-4 rounded-xl font-black uppercase tracking-wider text-sm md:text-lg hover:bg-slate-700 hover:border-yellow-500 transition-all flex items-center gap-3 shadow-lg">
+        <p data-emojis>:rules:</p>
+        View Clan/Server Rules
+    </a>
+</div>
+    </div>
+</section>
+
+<section id="discord" class="py-12 px-6">
+    <div class="max-w-6xl mx-auto bg-gradient-to-r from-[#6A359C] to-[#552586] rounded-3xl p-8 md:p-12 text-center shadow-2xl overflow-hidden relative">
+        <div class="absolute -top-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+        
+        <div class="relative z-10">
+            <h2 class="text-3xl md:text-4xl font-black text-white uppercase mb-4">Join the Community</h2>
+            <p class="text-indigo-100 mb-8 max-w-xl mx-auto font-medium">Get exclusive access to clan chats, strategy guides, base layouts, and share your best war attacks! -  Server Under Construction...</p>
+            <a href="https://discord.gg/jEN9NNdA4v" data-emojis target="_blank" class="inline-block bg-white text-[#5865F2] px-10 py-4 rounded-xl font-black uppercase tracking-wider text-lg hover:bg-slate-100 transition-transform hover:scale-105 active:scale-95 shadow-xl">
+                JOIN SERVER NOW :builder:
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="leadership" class="py-20 px-6 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-black text-center text-white uppercase mb-12 drop-shadow-sm">Clan Leadership</h2>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card p-6 border-t-4 border-t-[#D6AF36] flex flex-col items-center text-center">
+            <div class="text-2xl font-black text-white uppercase mb-1">MAYO</div>
+            <div class="font-mono text-sm text-slate-400 bg-black/30 px-3 py-1 rounded-md mb-4">#R80QRU299</div>
+            <div data-emojis class="font-mono text-sm text-[white] bg-[purple] px-3 py-1 rounded-md mb-4">:xp: 67</div>
+            <span data-emojis data-emoji-size="20px" class="bg-yellow-900/40 text-yellow-400 border border-yellow-700/50 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">:leader: Leader</span>
+        </div>
+
+        <div class="card p-6 border-t-4 border-t-[#D6d6d6] flex flex-col items-center text-center">
+            <div class="text-2xl font-black text-white uppercase mb-1">RJ</div>
+            <div class="font-mono text-sm text-slate-400 bg-black/30 px-3 py-1 rounded-md mb-4">#G8J2UPVYV</div>
+            <div data-emojis class="font-mono text-sm text-[white] bg-[purple] px-3 py-1 rounded-md mb-4">:xp: 145</div>
+            <span class="bg-blue-900/40 text-blue-400 border border-blue-700/50 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Co-Leader</span>
+        </div>
+
+        <div class="card p-6 border-t-4 border-t-[#CD7F32] flex flex-col items-center text-center">
+            <div class="text-2xl font-black text-white uppercase mb-1">??????</div>
+            <div class="font-mono text-sm text-slate-400 bg-black/30 px-3 py-1 rounded-md mb-4">#????????</div>
+            <div data-emojis class="font-mono text-sm text-[white] bg-[purple] px-3 py-1 rounded-md mb-4">:xp: ???</div>
+            <span class="bg-[#7c6303] text-[black] border border-[#CD7F32] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">ELDER</span>
+        </div>
+
+    </div>
+</section>
+
+<div id="footer-container"></div>
+
+<script src="navbar.js"></script>
+<script src="emojis.js"></script>
+<script src="updatewidget.js"></script>
+
+    <script>
+        function copyTag() {
+            const tag = document.getElementById('clanTag').innerText;
+            const textArea = document.createElement("textarea");
+            textArea.value = tag;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+
+            const toast = document.getElementById('copy-toast');
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
