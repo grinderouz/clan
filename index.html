@@ -131,6 +131,7 @@
     </div>
 </section>
 
+<!-- LIVE STATS SECTION -->
 <section id="live-stats-component" class="py-12">
     <div class="max-w-5xl mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -162,15 +163,15 @@
         (function() {
             const CONFIG = {
                 tag: "2JU29J22P",
-                // Ensure there are no spaces when you paste your token here
                 key: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjFlZTA2YTA3LTk3NzQtNDEyNi05MGVhLWZjMGY5NGEzMjViNCIsImlhdCI6MTc3NDkzODI3NSwic3ViIjoiZGV2ZWxvcGVyLzZlOTA3ZDU2LWViMTUtYjk5Mi0wYjE2LTIwMGZjMjU3ZTFiYiIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjQ1Ljc5LjIxOC43OSJdLCJ0eXBlIjoiY2xpZW50In1dfQ.aBlOgePCIHmh9camxNh7WL3asjghUjjlJgXJSp46EmKCDjN9UNc9fKtabmgfzmNI1FM0HptXgdQg-FDA5bnrYQ" 
             };
 
             async function refreshStats() {
                 const status = document.getElementById('api-status');
                 
-                if (!CONFIG.key || CONFIG.key === "PASTE_YOUR_API_TOKEN_HERE" || CONFIG.key.length < 20) {
-                    status.innerText = "Demo Mode: Add a valid API Key to enable live sync.";
+                // Logic fix: Only use demo mode if key is missing or explicitly the placeholder string
+                if (!CONFIG.key || CONFIG.key.length < 50 || CONFIG.key.includes("PASTE_YOUR")) {
+                    status.innerText = "Demo Mode: Check API Key configuration.";
                     document.getElementById('api-members').innerText = "37/50";
                     document.getElementById('api-trophies').innerText = "18,450";
                     document.getElementById('api-wins').innerText = "12";
@@ -179,7 +180,6 @@
                 }
 
                 try {
-                    // Using the standard community proxy URL format
                     const clanTagEncoded = encodeURIComponent("#" + CONFIG.tag);
                     const url = `https://cocproxy.royaleapi.dev/v1/clans/${clanTagEncoded}`;
 
@@ -212,7 +212,6 @@
                 }
             }
             
-            // Initial load
             if (document.readyState === 'complete') {
                 refreshStats();
             } else {
