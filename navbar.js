@@ -153,8 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             
             <div class="hidden md:flex items-center gap-6 font-black text-white uppercase text-sm tracking-widest">
-                <a href="#home" class="hover:text-yellow-400 transition py-1 coc-link">Home</a>
-                <a href="#leadership" class="hover:text-yellow-400 transition coc-link">Leadership</a>
+                <a href="index.html#home" class="hover:text-yellow-400 transition py-1 coc-link">Home</a>
+                <a href="index.html#leadership" class="hover:text-yellow-400 transition coc-link">Leadership</a>
                 
                 <div class="relative dropdown group">
                     <button class="flex items-center gap-1 hover:text-yellow-400 transition py-1 uppercase coc-link">
@@ -173,9 +173,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         <svg class="w-4 h-4 transition-transform group-hover:rotate-180 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div class="dropdown-menu">
-                        <a href="#rules">Rules</a>
-                        <a href="#stats">Stats</a>
-                        <a href="#leadership">Leaders</a>
+                        <a href="index.html#rules">Rules</a>
+                        <a href="index.html#stats">Stats</a>
+                        <a href="index.html#leadership">Leaders</a>
                         <a href="http://discord.gg/jEN9NNdA4v">Discord</a>
                     </div>
                 </div>

@@ -18,6 +18,8 @@ const EmojiSystem = (() => {
         "xp": "assets/emojis/xp.png",
         "rules": "assets/emojis/rules.png",
         "link": "assets/emojis/link.png",
+        "colead": "assets/emojis/co-lead.png",
+        "elder": "assets/emojis/elder.png",
     };
 
     const DEFAULT_SIZE = "1.375rem";
