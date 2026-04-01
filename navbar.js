@@ -174,10 +174,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         <svg class="w-4 h-4 transition-transform group-hover:rotate-180 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div class="dropdown-menu">
-                        <a href="index.html#rules">Rules</a>
-                        <a href="index.html#stats">Stats</a>
-                        <a href="index.html#leadership">Leaders</a>
-                        <a href="http://discord.gg/jEN9NNdA4v">Discord</a>
+                        <a data-emojis href="index.html#rules">:rules: Rules</a>
+                        <a data-emojis href="index.html#stats">:clan: Stats</a>
+                        <a data-emojis href="index.html#leadership">:leader: Leaders</a>
+                        <a data-emojis href="http://discord.gg/jEN9NNdA4v">:discord: Discord</a>
                     </div>
                 </div>
 
@@ -216,8 +216,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 
                 <div class="flex flex-col gap-4 mt-4 w-3/4">
-                    <a href="index.html#join" class="coc-btn-gold w-full text-center py-4 rounded-xl font-black text-xl uppercase tracking-wider">Join Clan</a>
-                    <a href="https://discord.gg/jEN9NNdA4v" class="coc-btn-blue w-full text-center py-4 rounded-xl font-black text-xl uppercase tracking-wider">Join Discord</a>
+                    <a data-emojis data-emoji-size="14px" href="index.html#join" class="coc-btn-gold w-full text-center py-4 rounded-xl font-black text-xs uppercase tracking-wider">:builder: Join Clan</a>
+                    <a data-emojis data-emoji-size="14px" href="https://discord.gg/jEN9NNdA4v" class="coc-btn-blue w-full text-center py-4 rounded-xl font-black text-xs uppercase tracking-wider">:discord: Join Discord</a>
                 </div>
             </div>
         </nav>
