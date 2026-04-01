@@ -155,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="hidden md:flex items-center gap-6 font-black text-white uppercase text-sm tracking-widest">
                 <a href="index.html#home" class="hover:text-yellow-400 transition py-1 coc-link">Home</a>
                 <a href="index.html#leadership" class="hover:text-yellow-400 transition coc-link">Leadership</a>
+                <a href="https://grinderouz.github.io/layout-hub/" class="hover:text-yellow-400 transition coc-link">Base Layouts</a>
                 
                 <div class="relative dropdown group">
                     <button class="flex items-center gap-1 hover:text-yellow-400 transition py-1 uppercase coc-link">
@@ -199,6 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             <div id="mobile-overlay" class="coc-mobile-menu fixed inset-0 translate-x-full transition-transform duration-300 ease-in-out z-[55] flex flex-col items-center justify-center gap-6 md:hidden shadow-2xl">
                 <a href="index.html" class="text-3xl font-black text-white uppercase hover:text-yellow-400 coc-text-shadow">Home</a>
+                <a href="https://grinderouz.github.io/layout-hub/" class="text-3xl font-black text-white uppercase hover:text-yellow-400 coc-text-shadow">Base Layouts</a>
                 
                 <div class="flex flex-col items-center gap-3 border-y border-slate-700/50 py-6 w-3/4">
                     <span class="text-xs text-yellow-600 uppercase tracking-widest font-black">Supercell</span>
