@@ -8,6 +8,7 @@ const EmojiSystem = (() => {
         "troopdonations": "assets/emojis/troopsdonation.png",
         "elixir": "assets/emojis/elixir.png",
         "gold": "assets/emojis/gold.png",
+        "usflag": "assets/emojis/usflag.png",
         "dark-elixir": "assets/emojis/dark-elixir.png",
         "gem": "assets/emojis/gem.png",
         "warleag": "assets/emojis/war-league.png",
