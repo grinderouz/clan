@@ -13,6 +13,7 @@ const NavbarComponent = `
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#about" class="nav-link text-white text-lg">About</a>
                         <a href="#rules" class="nav-link text-white text-lg">Rules</a>
+                        <a href="https://grinderouz.github.io/layout-hub/" class="nav-link text-white text-lg">Base Layouts</a>
                         <a href="#roster" class="nav-link text-white text-lg">Members</a>
                         <a href="#join" class="sc-btn sc-btn-blue !py-2 !px-4 !text-sm">Join Discord</a>
                     </div>
@@ -30,6 +31,7 @@ const NavbarComponent = `
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#about" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">About</a>
                 <a href="#rules" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Rules</a>
+                <a href="https://grinderouz.github.io/layout-hub/" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Base Layouts</a>
                 <a href="#roster" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Members</a>
                 <a href="#join" class="text-yellow-400 block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Join Discord</a>
             </div>
@@ -39,16 +41,23 @@ const NavbarComponent = `
 
 const FooterComponent = `
     <footer class="bg-slate-950 py-8 border-t-4 border-black mt-auto">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-            <div class="flex items-center mb-4 md:mb-0">
-                <div class="w-8 h-8 rounded bg-blue-600 border border-black flex items-center justify-center mr-2">
-                    <img src="assets/favicon.png" alt="Logo">
-                    </div>
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-y-6">
+            <div class="flex items-center">
+                <div class="w-8 h-8 rounded flex items-center justify-center mr-2">
+                    <img src="assets/navicon.png" alt="Logo">
+                </div>
                 <span class="sc-heading text-xl text-slate-400">GRINDEROUZ</span>
             </div>
+            
+            <div class="flex flex-col sm:flex-row items-center gap-y-2 sm:gap-x-6 text-slate-400 text-sm font-bold">
+                <a href="https://store.supercell.com/" target="_blank" class="hover:text-yellow-400 transition-colors">Supercell Store</a>
+                <a href="https://supercell.com/en/supercell-id/" target="_blank" class="hover:text-yellow-400 transition-colors">Supercell ID</a>
+                <a href="https://grinderouz.github.io/layout-hub/" class="hover:text-yellow-400 transition-colors">Base Layouts</a>
+            </div>
+
             <div class="text-slate-500 font-bold text-sm text-center md:text-right">
                 <p>&copy; 2025-2026 Grinderouz223 Clan. All rights reserved.</p>
-                <p class="mt-1 text-xs">This website is not affiliated with, endorsed, sponsored, or specifically approved by Supercell.</p>
+                <p class="mt-1 text-xs max-w-sm md:max-w-none">This website is not affiliated with, endorsed, sponsored, or specifically approved by Supercell.</p>
             </div>
         </div>
     </footer>
