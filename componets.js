@@ -14,7 +14,8 @@ const NavbarComponent = `
                         <a href="#about" class="nav-link text-white text-lg">About</a>
                         <a href="#rules" class="nav-link text-white text-lg">Rules</a>
                         <a href="https://grinderouz.github.io/layout-hub/" class="nav-link text-white text-lg">Base Layouts</a>
-                        <a href="#roster" class="nav-link text-white text-lg">Members</a>
+                        <a href="hof.html" class="nav-link text-white text-lg">🏆 HOF</a>
+                        <a href="#leadership" class="nav-link text-white text-lg">Leadership</a>
                         <a href="#join" class="sc-btn sc-btn-blue !py-2 !px-4 !text-sm">Join Discord</a>
                     </div>
                 </div>
@@ -32,7 +33,8 @@ const NavbarComponent = `
                 <a href="#about" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">About</a>
                 <a href="#rules" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Rules</a>
                 <a href="https://grinderouz.github.io/layout-hub/" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Base Layouts</a>
-                <a href="#roster" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Members</a>
+                <a href="hof.html" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Hall Of Fame</a>
+                <a href="#leadership" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Leadership</a>
                 <a href="#join" class="text-yellow-400 block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Join Discord</a>
             </div>
         </div>
