@@ -2,246 +2,300 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Base Layouts - Grinderouz | Clash Of Clan Layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>Grinderouz | Official Clan Website</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
     <style>
-        :root {
-            --coc-gold: #f3c31b;
-            --coc-gold-dark: #d4a017;
-            --coc-stone: #030303; 
-            --coc-border: #33553e; 
-        }
-
         body {
-            font-family: 'Open+Sans', sans-serif;
-            background-color: var(--coc-stone);
-            color: #f8fafc; 
-            scroll-behavior: smooth;
+            font-family: 'Nunito', sans-serif;
+            background-color: #111827;
+            background-image: 
+                radial-gradient(circle at 50% 0%, #1e3a8a 0%, transparent 70%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            color: #f8fafc;
         }
 
-        .hero-pattern {
-            background-color: var(--coc-stone);
-            background-image: url("https://www.transparenttextures.com/patterns/dark-matter.png");
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+            border-left: 1px solid #1e293b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #fde047, #eab308);
+            border: 3px solid #0f172a;
+            border-radius: 10px;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #fff176, #facc15);
         }
 
-        .btn-gold {
-            background: linear-gradient(to bottom, var(--coc-gold), var(--coc-gold-dark));
-            box-shadow: 0 4px 0 #9c730c, 0 5px 10px rgba(0,0,0,0.5);
-            transition: all 0.1s;
+        .sc-heading {
+            font-family: 'Lilita One', cursive;
+            color: #ffffff;
+            text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, -2px 2px 0 #000, 0px 5px 0 rgba(0,0,0,0.6);
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        .btn-gold:active {
-            transform: translateY(4px);
-            box-shadow: 0 0 0 #9c730c, 0 2px 5px rgba(0,0,0,0.5);
+        .sc-heading-gold { color: #fbbf24; }
+
+        .sc-btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            font-family: 'Lilita One', cursive; text-transform: uppercase;
+            font-size: 1.25rem; color: white; padding: 0.75rem 2rem;
+            border-radius: 0.75rem; border: 2px solid #000;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            transition: all 0.1s ease; position: relative; cursor: pointer; text-decoration: none;
+        }
+        .sc-btn-gold {
+            background: linear-gradient(to bottom, #fde047, #eab308);
+            box-shadow: 0 6px 0 #a16207, 0 10px 10px rgba(0,0,0,0.5);
+        }
+        .sc-btn-gold:active { transform: translateY(6px); box-shadow: 0 0px 0 #a16207, 0 4px 4px rgba(0,0,0,0.5); }
+        .sc-btn-blue {
+            background: linear-gradient(to bottom, #60a5fa, #3b82f6);
+            box-shadow: 0 6px 0 #1d4ed8, 0 10px 10px rgba(0,0,0,0.5);
+        }
+        .sc-btn-blue:active { transform: translateY(6px); box-shadow: 0 0px 0 #1d4ed8, 0 4px 4px rgba(0,0,0,0.5); }
+
+        .sc-card {
+            background-color: #1e293b; border: 3px solid #0f172a; border-radius: 1rem;
+            box-shadow: inset 0 3px 0 rgba(255,255,255,0.1), 0 8px 15px rgba(0,0,0,0.5);
+            position: relative; overflow: hidden;
+        }
+        .sc-card-header {
+            background: linear-gradient(to bottom, #334155, #1e293b);
+            border-bottom: 3px solid #0f172a; padding: 1rem;
         }
 
-        .card-hover {
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        .sc-badge {
+            background: linear-gradient(to bottom, #ef4444, #b91c1c);
+            border: 2px solid #000; box-shadow: 0 3px 0 #7f1d1d;
+            font-family: 'Lilita One', cursive;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         }
-        .card-hover:hover {
-            transform: translateY(-5px) scale(1.02);
+        
+        .nav-link {
+            font-family: 'Lilita One', cursive; text-transform: uppercase;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            transition: transform 0.2s, color 0.2s;
         }
+        .nav-link:hover { color: #fbbf24; transform: scale(1.1); }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased min-h-screen flex flex-col">
 
-    <!-- Navigation Container (Populated by layoutnav.js) -->
     <div id="navbar-container"></div>
 
-    <!-- Hero Section -->
-    <div class="hero-pattern border-b border-slate-800 py-16 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h1 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-4 drop-shadow-lg">
-                Clash of Clans <span class="text-[var(--coc-gold)]">Layouts</span>
-            </h1>
-            <p class="text-slate-400 text-lg md:text-xl font-semibold max-w-2xl mx-auto">
-                Find the perfect base for War, Farming, Trophy pushing, and more.
-            </p>
-        </div>
-    </div>
-
-    <!-- Main Content Area -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
-        <!-- Search & Filter Controls -->
-        <div class="bg-slate-900/50 p-4 md:p-6 rounded-2xl border border-slate-800 mb-8 shadow-xl">
-            <!-- Search Bar -->
-            <div class="relative mb-6">
-                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <svg class="h-5 w-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
+    <main class="flex-grow flex flex-col">
+        <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex items-center">
+            <div class="absolute top-1/4 left-10 text-6xl text-blue-500/20 transform -rotate-12"><i class="fa-solid fa-shield"></i></div>
+            <div class="absolute bottom-1/4 right-10 text-8xl text-yellow-500/10 transform rotate-12"><i class="fa-solid fa-khanda"></i></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center w-full">
+                <h1 class="sc-heading text-6xl md:text-8xl lg:text-9xl mb-6">
+                    DOMINATE THE <br> <span class="sc-heading-gold">ARENA</span>
+                </h1>
+                <p class="mt-4 max-w-2xl mx-auto text-xl md:text-2xl text-slate-300 font-bold mb-10 text-shadow-sm">
+                    Welcome to Grinderouz. We are a competitive, active, and friendly clan looking for members to join our ranks.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    <a href="#join" class="sc-btn sc-btn-gold text-xl">
+                        <i class="fa-solid fa-right-to-bracket mr-2"></i> Apply Now
+                    </a>
+                    <a href="#about" class="sc-btn sc-btn-blue text-xl">
+                        <i class="fa-solid fa-circle-info mr-2"></i> Learn More
+                    </a>
                 </div>
-                <input type="text" id="search-input" class="block w-full pl-12 pr-4 py-4 bg-slate-800 border-2 border-slate-700 rounded-xl leading-5 bg-transparent text-white placeholder-slate-400 focus:outline-none focus:bg-slate-800 focus:border-[var(--coc-gold)] focus:ring-0 transition-colors duration-200 text-lg shadow-inner" placeholder="Search by Town Hall (e.g., TH13), Category (e.g., War), or Title...">
-            </div>
-
-            <!-- Town Hall Level Filters -->
-            <div class="flex items-center justify-between gap-4">
-                <div class="flex-1 overflow-x-auto pb-2 -mb-2 no-scrollbar">
-                    <div class="flex space-x-2" id="th-filters">
-                        <button class="th-filter active px-6 py-2.5 rounded-lg font-black uppercase tracking-wider text-sm border-2 border-[var(--coc-gold)] bg-[var(--coc-gold)] text-black shadow-lg" data-th="ALL">
-                            All TH
-                        </button>
-                        <!-- Script will inject TH buttons here based on data -->
+                
+                <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+                    <div class="sc-card p-4 text-center">
+                        <div class="text-gray-400 text-sm font-bold uppercase mb-1">Clan Tag</div>
+                        <div class="sc-heading text-xl text-white">#2JU29J22P</div>
+                    </div>
+                    <div class="sc-card p-4 text-center">
+                        <div class="text-gray-400 text-sm font-bold uppercase mb-1">Members</div>
+                        <div class="sc-heading text-xl text-white">49/50</div>
+                    </div>
+                    <div class="sc-card p-4 text-center">
+                        <div class="text-gray-400 text-sm font-bold uppercase mb-1">Trophies</div>
+                        <div class="sc-heading text-xl text-yellow-400"><i class="fa-solid fa-trophy text-sm"></i> 9500+</div>
+                    </div>
+                    <div class="sc-card p-4 text-center">
+                        <div class="text-gray-400 text-sm font-bold uppercase mb-1">Total Wars</div>
+                        <div data-emojis class="sc-heading text-xl text-white">:clan: 5</div>
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
 
-        <!-- Layouts Grid -->
-        <div id="layouts-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <!-- Cards will be injected here -->
-        </div>
+        <section id="about" class="py-20 bg-slate-900 border-t-8 border-slate-950 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="sc-heading text-4xl md:text-5xl">Who Are <span class="sc-heading-gold">We?</span></h2>
+                    <div class="w-24 h-2 bg-blue-500 mx-auto mt-4 rounded-full border border-black"></div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="sc-card">
+                        <div class="sc-card-header text-center">
+                            <div class="w-16 h-16 mx-auto bg-red-500 rounded-full border-4 border-black shadow-[0_4px_0_#000] flex items-center justify-center -mt-8 mb-4">
+                                <p data-emojis data-emoji-size="40px">:warleag:</p>
+                            </div>
+                            <h3 class="sc-heading text-2xl text-white">War Focused</h3>
+                        </div>
+                        <div class="p-6 text-slate-300 font-bold leading-relaxed text-center">
+                            We take our clan wars seriously. Back-to-back wars, coordinated attacks, and a drive to paint our war log green.
+                        </div>
+                    </div>
+                    <div class="sc-card">
+                        <div class="sc-card-header text-center">
+                            <div class="w-16 h-16 mx-auto bg-green-500 rounded-full border-4 border-black shadow-[0_4px_0_#000] flex items-center justify-center -mt-8 mb-4">
+                                <p data-emojis data-emoji-size="40px">:troopdonations:</p>
+                            </div>
+                            <h3 class="sc-heading text-2xl text-white">Active Donators</h3>
+                        </div>
+                        <div class="p-6 text-slate-300 font-bold leading-relaxed text-center">
+                            Your requests won't sit empty here. We pride ourselves on quick, max-level donations to keep you pushing.
+                        </div>
+                    </div>
+                    <div class="sc-card">
+                        <div class="sc-card-header text-center">
+                            <div class="w-16 h-16 mx-auto bg-purple-500 rounded-full border-4 border-black shadow-[0_4px_0_#000] flex items-center justify-center -mt-8 mb-4">
+                                <p data-emojis data-emoji-size="40px">:community:</p>
+                            </div>
+                            <h3 class="sc-heading text-2xl text-white">Great Community</h3>
+                        </div>
+                        <div class="p-6 text-slate-300 font-bold leading-relaxed text-center">
+                            Beyond the game, we are a family. Active Discord, friendly banter, and a toxic-free environment.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- No Results State -->
-        <div id="no-results" class="hidden text-center py-20">
-            <svg class="mx-auto h-16 w-16 text-slate-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <h3 class="text-xl font-bold text-slate-300 mb-2">No layouts found</h3>
-            <p class="text-slate-500">Try adjusting your search query or filters.</p>
-        </div>
+        <section id="rules" class="py-20 bg-slate-800 border-t-8 border-slate-950 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="sc-card">
+                        <div class="sc-card-header bg-gradient-to-b from-blue-900 to-slate-800">
+                            <h2 class="sc-heading text-3xl flex items-center"><i class="fa-solid fa-clipboard-check mr-3 text-blue-400"></i> Requirements</h2>
+                        </div>
+                        <div class="p-6">
+                            <ul class="space-y-4 font-bold text-lg text-slate-200">
+                                <li class="flex items-center p-3 bg-slate-900/50 rounded-lg border border-slate-700">
+                                    <div class="w-8 h-8 rounded bg-yellow-500 border border-black flex justify-center items-center mr-4 shadow-sm text-black">1</div> Town Hall 7+ or up.
+                                </li>
+                                <li class="flex items-center p-3 bg-slate-900/50 rounded-lg border border-slate-700">
+                                    <div class="w-8 h-8 rounded bg-yellow-500 border border-black flex justify-center items-center mr-4 shadow-sm text-black">2</div> Non-rushed bases/accounts only.
+                                </li>
+                                <li class="flex items-center p-3 bg-slate-900/50 rounded-lg border border-slate-700">
+                                    <div class="w-8 h-8 rounded bg-yellow-500 border border-black flex justify-center items-center mr-4 shadow-sm text-black">3</div> Must be active in events.
+                                </li>
+                                <li class="flex items-center p-3 bg-slate-900/50 rounded-lg border border-slate-700">
+                                    <div class="w-8 h-8 rounded bg-yellow-500 border border-black flex justify-center items-center mr-4 shadow-sm text-black">4</div> Required League: Skeleton 2.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sc-card">
+                        <div class="sc-card-header bg-gradient-to-b from-red-900 to-slate-800">
+                            <h2 class="sc-heading text-3xl flex items-center"><i class="fa-solid fa-scroll mr-3 text-red-400"></i> Clan Rules</h2>
+                        </div>
+                        <div class="p-6">
+                            <ul class="space-y-4 font-bold text-lg text-slate-200">
+                                <li class="flex items-start"><i class="fa-solid fa-xmark text-red-500 mt-1 mr-3 text-xl"></i><div><span class="text-white">The Inactivity Limit:</span> Players inactive for 5 consecutive days without notifying leadership will be kicked.</div></li>
+                                <li class="flex items-start"><i class="fa-solid fa-xmark text-red-500 mt-1 mr-3 text-xl"></i><div><span class="text-white">No Toxicity:</span> Instant kick for harassment.</div></li>
+                                <li class="flex items-start"><i class="fa-solid fa-xmark text-red-500 mt-1 mr-3 text-xl"></i><div><span class="text-white">War Attacks:</span> Use all attacks if opted in.</div></li>
+                                <li class="flex items-start"><i class="fa-solid fa-xmark text-red-500 mt-1 mr-3 text-xl"></i><div><span class="text-white">Donation Ratio:</span> Keep donations fair.</div></li>
+                                <li class="flex items-start"><i class="fa-solid fa-xmark text-red-500 mt-1 mr-3 text-xl"></i><div><span class="text-white">Promotions:</span> Earned, not given. Do not ask.</div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10 text-center">
+                    <a href="clan-and-server-rules.html" class="sc-btn sc-btn-gold">
+                        <i class="fa-solid fa-book-open mr-2"></i> View Detailed Rules
+                    </a>
+                </div>
+            </div>
+        </section>
 
+        <section id="leadership" class="py-20 bg-slate-900 border-t-8 border-slate-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="sc-heading text-4xl md:text-5xl">Clan <span class="sc-heading-gold">Leadership</span></h2>
+                    <div class="w-24 h-2 bg-yellow-400 mx-auto mt-4 rounded-full border border-black"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="sc-card text-center p-6 border-yellow-500">
+                        <div class="w-20 h-20 mx-auto bg-gradient-to-b from-yellow-300 to-yellow-600 rounded-lg border-2 border-black rotate-3 shadow-lg mb-4 flex items-center justify-center">
+                            <i data-emojis data-emoji-size="40px">:leader:</i>
+                        </div>
+                        <h3 class="sc-heading text-2xl mb-1">MAYO</h3>
+                        <div class="text-yellow-400 font-bold text-sm uppercase tracking-wide mb-3">Leader</div>
+                        <div class="bg-slate-800 rounded p-2 text-sm font-bold border border-slate-700">
+                            <i class="fa-solid fa-trophy text-yellow-500"></i> 170
+                        </div>
+                    </div>
+                    <div class="sc-card text-center p-6">
+                        <div class="w-20 h-20 mx-auto bg-gradient-to-b from-slate-300 to-slate-500 rounded-lg border-2 border-black -rotate-3 shadow-lg mb-4 flex items-center justify-center">
+                            <i data-emojis data-emoji-size="40px">:colead:</i>
+                        </div>
+                        <h3 class="sc-heading text-2xl mb-1">RJ</h3>
+                        <div class="text-slate-300 font-bold text-sm uppercase tracking-wide mb-3">Co-Leader</div>
+                        <div class="bg-slate-800 rounded p-2 text-sm font-bold border border-slate-700">
+                            <i class="fa-solid fa-trophy text-yellow-500"></i> 201
+                        </div>
+                    </div>
+                    <div class="sc-card text-center p-6">
+                        <div class="w-20 h-20 mx-auto bg-gradient-to-b from-amber-600 to-amber-800 rounded-lg border-2 border-black -rotate-3 shadow-lg mb-4 flex items-center justify-center">
+                            <i data-emojis data-emoji-size="40px">:elder:</i>
+                        </div>
+                        <h3 class="sc-heading text-2xl mb-1">????</h3>
+                        <div class="text-amber-500 font-bold text-sm uppercase tracking-wide mb-3">ELDER</div>
+                        <div class="bg-slate-800 rounded p-2 text-sm font-bold border border-slate-700">
+                            <i class="fa-solid fa-trophy text-yellow-500"></i> ???
+                        </div>
+                        <a href="https://forms.gle/K2QNWEMRjcSt6d4N7" class="inline-block mt-4 w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-2 px-4 rounded transition-colors duration-200">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="join" class="py-24 bg-blue-900 border-t-8 border-slate-950 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000), repeating-linear-gradient(45deg, #000 25%, #1e3a8a 25%, #1e3a8a 75%, #000 75%, #000); background-position: 0 0, 20px 20px; background-size: 40px 40px;"></div>
+            
+            <div class="max-w-4xl mx-auto px-4 relative z-10 text-center sc-card p-12 border-4 border-black">
+                <h2 class="sc-heading text-5xl md:text-6xl mb-4">READY TO <span class="text-yellow-400">CLASH?</span></h2>
+                <p class="text-xl text-slate-200 font-bold mb-8">
+                    Join our Discord server to apply. Read the rules, request in the request verification channel and wait for a leader to review your request.
+                </p>
+                <a href="https://discord.gg/jEN9NNdA4v" target="_blank"><button onclick="showDiscordToast()" class="sc-btn sc-btn-gold text-2xl py-4 px-8 w-full sm:w-auto">
+                    <i class="fa-brands fa-discord mr-3"></i> JOIN DISCORD SERVER
+                </button></a>
+                <p class="mt-6 text-sm text-slate-400 font-bold">Clan Tag: #2JU29J22P | Req: TH7+ & Skeleton 2 Rank</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <div id="discord-toast" class="fixed bottom-10 left-1/2 transform -translate-x-1/2 translate-y-32 opacity-0 pointer-events-none bg-blue-600 text-white w-[90%] sm:w-auto justify-center px-6 py-4 rounded-xl border-4 border-black shadow-[0_6px_0_#000] z-50 transition-all duration-300 flex items-center">
+        <i class="fa-brands fa-discord text-2xl mr-3"></i>
+        <span class="sc-heading text-xl">Connecting to Discord...</span>
     </div>
 
-    <!-- External Scripts -->
-    <script src="layoutnav.js"></script>
-    <script src="layoutdb.js"></script>
-
-    <!-- Main Logic -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Assume layoutdb.js exposes a global variable containing the base data.
-            // Adjust "layouts" to whatever variable name is used in layoutdb.js if different.
-            const db = typeof layouts !== 'undefined' ? layouts : (typeof databases !== 'undefined' ? databases : {});
-            
-            const grid = document.getElementById('layouts-grid');
-            const noResults = document.getElementById('no-results');
-            const searchInput = document.getElementById('search-input');
-            const filtersContainer = document.getElementById('th-filters');
-            
-            let currentTH = 'ALL';
-            let searchQuery = '';
-
-            // 1. Initialize TH Filter Buttons dynamically based on available data
-            const availableTHs = Object.keys(db).sort((a, b) => b - a); // Sort TH descending
-            availableTHs.forEach(th => {
-                const btn = document.createElement('button');
-                btn.className = 'th-filter px-6 py-2.5 rounded-lg font-black uppercase tracking-wider text-sm border-2 border-slate-700 bg-slate-800 text-slate-300 hover:border-slate-500 hover:text-white transition-colors whitespace-nowrap';
-                btn.dataset.th = th;
-                btn.textContent = `TH ${th}`;
-                filtersContainer.appendChild(btn);
-            });
-
-            // 2. Setup Event Listeners
-            // Search Input
-            searchInput.addEventListener('input', (e) => {
-                searchQuery = e.target.value.toLowerCase().trim();
-                renderLayouts();
-            });
-
-            // Filter Buttons
-            filtersContainer.addEventListener('click', (e) => {
-                const btn = e.target.closest('.th-filter');
-                if (!btn) return;
-
-                // Update active state styling
-                document.querySelectorAll('.th-filter').forEach(b => {
-                    b.classList.remove('border-[var(--coc-gold)]', 'bg-[var(--coc-gold)]', 'text-black', 'shadow-lg');
-                    b.classList.add('border-slate-700', 'bg-slate-800', 'text-slate-300');
-                });
-                
-                btn.classList.remove('border-slate-700', 'bg-slate-800', 'text-slate-300');
-                btn.classList.add('border-[var(--coc-gold)]', 'bg-[var(--coc-gold)]', 'text-black', 'shadow-lg');
-
-                currentTH = btn.dataset.th;
-                renderLayouts();
-            });
-
-            // 3. Render Function
-            function renderLayouts() {
-                grid.innerHTML = '';
-                let displayLayouts = [];
-
-                // Gather layouts based on selected TH
-                for (let thLevel in db) {
-                    if (currentTH === 'ALL' || currentTH === thLevel) {
-                        // Append the TH level to the object for search context
-                        const basesWithTH = db[thLevel].map(base => ({ ...base, thLevel: thLevel }));
-                        displayLayouts = displayLayouts.concat(basesWithTH);
-                    }
-                }
-
-                // Apply Search Filter
-                if (searchQuery) {
-                    displayLayouts = displayLayouts.filter(layout => {
-                        const titleMatch = layout.title && layout.title.toLowerCase().includes(searchQuery);
-                        const typeMatch = layout.type && layout.type.name && layout.type.name.toLowerCase().includes(searchQuery);
-                        const thMatch = `th${layout.thLevel}`.includes(searchQuery) || `th ${layout.thLevel}`.includes(searchQuery);
-                        const idMatch = layout.id && layout.id.toString().includes(searchQuery);
-                        
-                        return titleMatch || typeMatch || thMatch || idMatch;
-                    });
-                }
-
-                // Show/Hide No Results
-                if (displayLayouts.length === 0) {
-                    grid.classList.add('hidden');
-                    noResults.classList.remove('hidden');
-                    return;
-                } else {
-                    grid.classList.remove('hidden');
-                    noResults.classList.add('hidden');
-                }
-
-                // Render Cards
-                displayLayouts.forEach(layout => {
-                    // Fallback colors if type doesn't specify
-                    const typeColorClass = layout.type?.color || 'bg-slate-900/50 text-slate-400 border-slate-700/50';
-                    const typeName = layout.type?.name || 'Uncategorized';
-                    
-                    const cardHTML = `
-                        <div class="card-hover bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 shadow-xl flex flex-col h-full">
-                            <div class="relative h-48 bg-slate-800 overflow-hidden group">
-                                <img src="${layout.image}" alt="${layout.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/1e293b/475569?text=Image+Not+Found'">
-                                
-                                <div class="absolute top-0 right-0">
-                                    <span class="${typeColorClass} text-[10px] font-black uppercase px-3 py-1.5 rounded-bl-xl border-b border-l tracking-tighter shadow-xl backdrop-blur-sm">
-                                        ${typeName}
-                                    </span>
-                                </div>
-                                <div class="absolute top-0 left-0">
-                                    <span class="bg-[var(--coc-stone)] text-white text-[12px] font-black uppercase px-3 py-1.5 rounded-br-xl border-b border-r border-slate-700 shadow-xl backdrop-blur-sm">
-                                        TH ${layout.thLevel}
-                                    </span>
-                                </div>
-                            </div>
-                            
-                            <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="text-lg font-black text-white uppercase leading-tight mb-2 min-h-[3rem] line-clamp-2">${layout.title}</h3>
-                                <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-800">
-                                    <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">${layout.date || 'Recent'}</span>
-                                    <span class="text-[10px] text-slate-600 font-bold">ID: #${layout.id}</span>
-                                </div>
-                                
-                                <a href="${layout.link}" target="_blank" class="btn-gold text-black mt-4 w-full py-3 rounded-lg font-black uppercase tracking-widest flex items-center justify-center gap-2 text-sm shadow-md hover:shadow-xl">
-                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"></path><path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 1 1 0 00-1 1v2a1 1 0 01-1 1H6a1 1 0 01-1-1V6a1 1 0 011-1h1.5a1 1 0 001-1z"></path></svg>
-                                    Copy Layout
-                                </a>
-                            </div>
-                        </div>
-                    `;
-                    grid.insertAdjacentHTML('beforeend', cardHTML);
-                });
-            }
-
-            // Initial Render
-            renderLayouts();
-        });
-    </script>
+    <script src="emojis.js"></script>
+    <script src="componets.js"></script>
 </body>
 </html>
