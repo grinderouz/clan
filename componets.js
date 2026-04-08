@@ -12,11 +12,11 @@ const NavbarComponent = `
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#about" class="nav-link text-white text-lg">About</a>
-                        <a href="#rules" class="nav-link text-white text-lg">Rules</a>
-                        <a href="https://grinderouz.github.io/layout-hub/" class="nav-link text-white text-lg">Base Layouts</a>
-                        <a href="hof.html" class="nav-link text-white text-lg">🏆 HOF</a>
+                        <a href="#rules" class="nav-link text-white hover:text-[red] text-lg">Rules</a>
                         <a href="#leadership" class="nav-link text-white text-lg">Leadership</a>
-                        <a href="#join" class="sc-btn sc-btn-blue !py-2 !px-4 !text-sm">Join Discord</a>
+                        <a href="hof.html" class="nav-link text-white hover:text-[gold] text-lg">HALL OF FAME</a>
+                        <a href="https://grinderouz.github.io/layout-hub/" class="nav-link text-white hover:text-[yellow] text-lg">Base Layouts</a>
+                        <a href="#join" class="nav-link text-[lightblue] hover:text-[#7289da] text-lg">Discord</a>
                     </div>
                 </div>
 
