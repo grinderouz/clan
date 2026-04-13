@@ -4,7 +4,7 @@ const NavbarComponent = `
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
                     <div class="w-10 h-10 rounded bg-[#333] border-2 border-black flex items-center justify-center mr-3 shadow-[0_3px_0_#000]">
-                        <img src="assets/favicon.png" alt="Logo">
+                        <img src="assets/navicon.png" alt="Logo">
                     </div>
                     <a href="index.html"><span class="sc-heading text-2xl tracking-wider">GRINDEROUZ</span></a>
                 </div>
