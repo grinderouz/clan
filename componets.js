@@ -3,7 +3,7 @@ const NavbarComponent = `
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <div class="w-10 h-10 rounded bg-[none] border-2 border-black flex items-center justify-center mr-3 shadow-[0_3px_0_#000]">
+                    <div class="w-10 h-10 rounded bg-[none] border-2 border-none flex items-center justify-center mr-3 shadow-[0_3px_0_#000]">
                         <img src="assets/navicon.png" alt="Logo">
                     </div>
                     <a href="index.html"><span class="sc-heading text-2xl tracking-wider">GRINDEROUZ</span></a>
