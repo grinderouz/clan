@@ -3,7 +3,7 @@ const NavbarComponent = `
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <div class="w-10 h-10 rounded bg-[none] border-2 border-none flex items-center justify-center mr-3 shadow-[0_3px_0_#000]">
+                    <div class="w-10 h-10 rounded bg-[none] border-2 border-none flex items-center justify-center mr-3">
                         <img src="assets/navicon.png" alt="Logo">
                     </div>
                     <a href="index.html"><span class="sc-heading text-2xl tracking-wider">GRINDEROUZ</span></a>
@@ -12,16 +12,16 @@ const NavbarComponent = `
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#about" class="nav-link text-white text-lg">About</a>
-                        <a href="#rules" class="nav-link text-white hover:text-[red] text-lg">Rules</a>
+                        <a href="#rules" class="nav-link text-white text-lg">Rules</a>
                         <a href="#leadership" class="nav-link text-white text-lg">Leadership</a>
-                        <a href="hof.html" class="nav-link text-white hover:text-[gold] text-lg">HALL OF FAME</a>
-                        <a href="https://grinderouz.github.io/layout-hub/" class="nav-link text-white hover:text-[yellow] text-lg">Base Layouts</a>
+                        <a href="#applynow" class="nav-link text-white text-lg">Apply Now!</a>
+                        <a href="https://grinderouz.github.io/layout-hub/" class="nav-link text-white text-lg">Base Layouts</a>
                         <a href="#join" class="nav-link text-[lightblue] hover:text-[#7289da] text-lg">Discord</a>
                     </div>
                 </div>
 
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2 bg-slate-800 rounded border-2 border-black shadow-[0_3px_0_#000]">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2 bg-slate-800 rounded">
                         <i class="fa-solid fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -33,8 +33,8 @@ const NavbarComponent = `
                 <a href="#about" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">About</a>
                 <a href="#rules" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Rules</a>
                 <a href="https://grinderouz.github.io/layout-hub/" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Base Layouts</a>
-                <a href="hof.html" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Hall Of Fame</a>
                 <a href="#leadership" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Leadership</a>
+                <a href="#applynow" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Apply Now!</a>
                 <a href="#join" class="text-yellow-400 block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Join Discord</a>
             </div>
         </div>
