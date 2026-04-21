@@ -15,7 +15,6 @@ const NavbarComponent = `
                         <a href="#rules" class="nav-link text-white text-lg">Rules</a>
                         <a href="#leadership" class="nav-link text-white text-lg">Leadership</a>
                         <a href="#applynow" class="nav-link text-white text-lg">Apply Now!</a>
-                        <a href="https://grinderouz.github.io/layout-hub/" class="nav-link text-white text-lg">Base Layouts</a>
                         <a href="#join" class="nav-link text-[lightblue] hover:text-[#7289da] text-lg">Discord</a>
                     </div>
                 </div>
@@ -32,7 +31,6 @@ const NavbarComponent = `
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#about" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">About</a>
                 <a href="#rules" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Rules</a>
-                <a href="https://grinderouz.github.io/layout-hub/" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Base Layouts</a>
                 <a href="#leadership" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Leadership</a>
                 <a href="#applynow" class="text-white block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Apply Now!</a>
                 <a href="#join" class="text-yellow-400 block px-3 py-2 rounded-md text-base font-bold uppercase sc-heading mobile-nav-link">Join Discord</a>
@@ -54,7 +52,7 @@ const FooterComponent = `
             <div class="flex flex-col sm:flex-row items-center gap-y-2 sm:gap-x-6 text-slate-400 text-sm font-bold">
                 <a href="https://store.supercell.com/" target="_blank" class="hover:text-yellow-400 transition-colors">Supercell Store</a>
                 <a href="https://supercell.com/en/supercell-id/" target="_blank" class="hover:text-yellow-400 transition-colors">Supercell ID</a>
-                <a href="https://grinderouz.github.io/layout-hub/" class="hover:text-yellow-400 transition-colors">Base Layouts</a>
+                <a href="https://discord.gg/jEN9NNdA4v" class="hover:text-yellow-400 transition-colors">Community</a>
             </div>
 
             <div class="text-slate-500 font-bold text-sm text-center md:text-right">
