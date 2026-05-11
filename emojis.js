@@ -21,6 +21,7 @@ const EmojiSystem = (() => {
         "link": "assets/emojis/link.png",
         "colead": "assets/emojis/co-lead.png",
         "elder": "assets/emojis/elder.png",
+        "blacklist": "assets/emojis/blacklisted.png",
     };
 
     const DEFAULT_SIZE = "1.375rem";

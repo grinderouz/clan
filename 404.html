@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <title>Page Not Found | Grinderouz</title>
+    <title>Grinderouz | 404 Not Found</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.png">
     <link rel="manifest" href="manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-
     <style>
         body {
             font-family: 'Nunito', sans-serif;
@@ -20,103 +19,116 @@
                 radial-gradient(circle at 50% 0%, #1e3a8a 0%, transparent 70%),
                 url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             color: #f8fafc;
+            min-height: 100vh;
         }
-
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-            border-left: 1px solid #1e293b;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, #fde047, #eab308);
-            border: 3px solid #0f172a;
-            border-radius: 10px;
-            box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(to bottom, #fff176, #facc15);
-        }
-
         .sc-heading {
             font-family: 'Lilita One', cursive;
-            color: #ffffff;
-            text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, -2px 2px 0 #000, 0px 5px 0 rgba(0,0,0,0.6);
-            letter-spacing: 1px;
+            color: #fff;
+            text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 5px 0 rgba(0,0,0,0.5);
+            letter-spacing: 2px;
             text-transform: uppercase;
+            line-height: 1.1;
         }
-
         .sc-heading-gold { color: #fbbf24; }
-
         .sc-btn {
             display: inline-flex; align-items: center; justify-content: center;
             font-family: 'Lilita One', cursive; text-transform: uppercase;
             font-size: 1.25rem; color: white; padding: 0.75rem 2rem;
             border-radius: 0.75rem; border: 2px solid #000;
             text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-            transition: all 0.1s ease; position: relative; cursor: pointer; text-decoration: none;
+            transition: all 0.15s cubic-bezier(.4,0,.2,1); position: relative; cursor: pointer; text-decoration: none;
         }
-
-        .sc-btn-gold {
-            background: linear-gradient(to bottom, #fde047, #eab308);
-            box-shadow: 0 6px 0 #a16207, 0 10px 10px rgba(0,0,0,0.5);
-        }
-        .sc-btn-gold:active { transform: translateY(6px); box-shadow: 0 0px 0 #a16207, 0 4px 4px rgba(0,0,0,0.5); }
-
         .sc-btn-blue {
             background: linear-gradient(to bottom, #60a5fa, #3b82f6);
-            box-shadow: 0 6px 0 #1d4ed8, 0 10px 10px rgba(0,0,0,0.5);
+            box-shadow: 0 6px 0 #1d4ed8, 0 10px 10px rgba(0,0,0,0.16);
         }
-        .sc-btn-blue:active { transform: translateY(6px); box-shadow: 0 0px 0 #1d4ed8, 0 4px 4px rgba(0,0,0,0.5); }
-
+        .sc-btn-blue:active { transform: translateY(4px); box-shadow: 0 2px 0 #1d4ed8, 0 4px 8px rgba(0,0,0,0.08);}
         .sc-card {
-            background-color: #1e293b; border: 3px solid #0f172a; border-radius: 1rem;
-            box-shadow: inset 0 3px 0 rgba(255,255,255,0.1), 0 8px 15px rgba(0,0,0,0.5);
-            position: relative; overflow: hidden;
+            background-color: #1e293b;
+            border: 3px solid #0f172a;
+            border-radius: 1rem;
+            box-shadow: 0 8px 30px 0 rgba(0,0,0,0.48), inset 0 3px 0 rgba(255,255,255,0.07);
+            position: relative;
+            overflow: hidden;
+            animation: pop-in 0.7s cubic-bezier(.17,.67,.6,1.36);
         }
-
+        @keyframes pop-in {
+            0%   { opacity: 0; transform: scale(0.98) translateY(30px);}
+            70%  { opacity: 1; transform: scale(1.04) translateY(-6px);}
+            100% { opacity: 1; transform: scale(1.0) translateY(0);}
+        }
         .nav-link {
             font-family: 'Lilita One', cursive; text-transform: uppercase;
             text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
             transition: transform 0.2s, color 0.2s;
         }
-        .nav-link:hover { color: #fbbf24; transform: scale(1.1); }
+        .nav-link:hover { color: #fbbf24; transform: scale(1.1);}
+        .glow {
+            box-shadow: 0 0 60px 4px #fbbf2499, 0 0 4px 2px #fff2;
+            animation: glow-ani 2.8s infinite alternate;
+        }
+        @keyframes glow-ani {
+            from { box-shadow: 0 0 22px 2px #fbbf2480, 0 0 4px 2px #fff2; }
+            to   { box-shadow: 0 0 60px 6px #fbbf24cc, 0 0 4px 2px #fff2;}
+        }
+        .small-cap {
+            letter-spacing: 1.5px;
+            font-size: 1rem;
+            color: #fbbf24cc;
+            margin-top: -0.8rem;
+            margin-bottom: 1.2rem;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Lilita One', cursive;
+        }
+        ::selection {
+            background: #60a5fa44;
+        }
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 
     <div id="navbar-container"></div>
 
-    <main class="flex-grow flex items-center justify-center pt-32 pb-20">
-        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
-            
-            <div class="sc-card p-10 md:p-16 border-red-900/50">
-                <div class="mb-6 flex justify-center">
-                    <!-- Using your custom 404 emoji defined in emojis.js -->
-                    <p data-emojis data-emoji-size="120px">:404:</p>
+    <main class="flex-grow flex flex-col items-center justify-center pt-24 pb-12 relative z-10">
+        <div class="absolute left-12 top-1/4 hidden md:block text-[8rem] text-blue-500/10 -rotate-12 select-none pointer-events-none">
+            <i class="fa-solid fa-shield"></i>
+        </div>
+        <div class="absolute right-12 bottom-1/4 hidden md:block text-[10rem] text-yellow-500/10 rotate-6 select-none pointer-events-none">
+            <i class="fa-solid fa-khanda"></i>
+        </div>
+        <div class="max-w-2xl mx-auto px-4 sm:px-7 lg:px-8 text-center w-full">
+
+            <div class="sc-card p-10 md:p-14 border border-red-800/60 relative overflow-visible">
+
+                <div class="mb-3 flex justify-center">
+                    <span class="inline-block rounded-full bg-[#1e293b] p-3 shadow-lg">
+                        <p data-emojis data-emoji-size="70px">:404:</p>
+                    </span>
                 </div>
+                <div class="small-cap">Oops! Something went wrong</div>
+
+                <h1 class="sc-heading text-7xl md:text-8xl mb-1 text-red-400" style="text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000, 0px 7px 0 rgba(0,0,0,0.65); letter-spacing: 0.12em;">404</h1>
                 
-                <h1 class="sc-heading text-6xl md:text-8xl mb-2 text-red-500" style="text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, -3px 3px 0 #000, 0px 6px 0 rgba(0,0,0,0.8);">404</h1>
-                <h2 class="sc-heading text-3xl md:text-5xl mb-6">BASE <span class="sc-heading-gold">NOT FOUND</span></h2>
+                <h2 class="sc-heading text-2xl md:text-4xl mb-6 tracking-wider text-slate-100">
+                    <span class="text-white">You just hit a <span class="sc-heading-gold">dead end</span>.</span>
+                </h2>
+
+                <div class="w-24 h-2 bg-gradient-to-r from-red-500 via-amber-400 to-yellow-400 mx-auto mb-7 rounded-full border border-black shadow-[0_2px_0_#000]" style="opacity:.7"></div>
                 
-                <div class="w-32 h-2 bg-red-500 mx-auto mb-6 rounded-full border border-black shadow-[0_2px_0_#000]"></div>
-                
-                <p class="text-xl text-slate-300 font-bold mb-10 leading-relaxed">
-                    Looks like a Goblin snagged this page, or it was completely 3-starred! The route you are looking for doesn't exist in our village.
+                <p class="text-lg md:text-xl text-slate-300 font-semibold mb-12 leading-relaxed transition-all duration-300">
+                    The page you’re looking for wasn’t found.<br>
+                    Don’t worry&mdash;even the best clans make the occasional misstep.<br class="hidden sm:inline">
+                    <span class="text-yellow-200">Return home and keep dominating the arena!</span>
                 </p>
-                
-                <a href="index.html" class="sc-btn sc-btn-blue text-xl">
-                    <i class="fa-solid fa-house mr-2"></i> Return to Village
+
+                <a href="index.html" class="sc-btn sc-btn-blue text-xl px-8 shadow-lg hover:scale-105 hover:bg-blue-600 transition-all duration-150">
+                    <i class="fa-solid fa-arrow-left mr-2"></i> Back to Home
                 </a>
             </div>
-
         </div>
     </main>
-
     <div id="footer-container"></div>
-
-    <!-- Scripts needed to load components and emojis -->
     <script src="emojis.js"></script>
     <script src="componets.js"></script>
 </body>
