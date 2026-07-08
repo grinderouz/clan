@@ -6,350 +6,537 @@
     <title>Grinderouz | Clan Rules</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.png">
     <link rel="manifest" href="manifest.json">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
+        :root {
+            --bg-body: #111827;
+            --bg-section-alt: #0f172a;
+            --bg-card: #1e293b;
+            --bg-card-header: #334155;
+            
+            --nav-footer-match: #020617;
+            --border-dark: #000000;
+            
+            --text-main: #f8fafc;
+            --text-muted: #9ca3af;
+            --text-dark: #1e293b;
+            
+            --accent-gold: #FFD700;
+            --accent-gold-hover: #FACC15;
+            --accent-gold-shadow: #a16207;
+            
+            --accent-blue: #3b82f6;
+            --accent-blue-hover: #60a5fa;
+            --accent-blue-shadow: #1d4ed8;
+            
+            --accent-red: #ef4444;
+            --accent-green: #22c55e;
+            --accent-purple: #a855f7;
+            
+            --font-heading: 'Lilita One', cursive;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         body {
-            font-family: 'Nunito', sans-serif;
-            background-color: #111827;
-            background-image: 
-                radial-gradient(circle at 50% 0%, #1e3a8a 0%, transparent 70%),
-                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            color: #f8fafc;
+            font-family: var(--font-body);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: radial-gradient(circle at 50% 0%, rgba(30,58,138,0.5) 0%, transparent 70%);
         }
-
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-            border-left: 1px solid #1e293b;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, #fde047, #eab308);
-            border: 3px solid #0f172a;
-            border-radius: 10px;
-            box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(to bottom, #fff176, #facc15);
-        }
-
-        .sc-heading {
-            font-family: 'Lilita One', cursive;
-            color: #ffffff;
-            text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, -2px 2px 0 #000, 0px 5px 0 rgba(0,0,0,0.6);
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: normal;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
-
-        .sc-heading-gold { color: #fbbf24; }
-
-        .sc-card {
-            background-color: #1e293b; border: 3px solid #0f172a; border-radius: 1rem;
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s ease;
+        }
+        ::-webkit-scrollbar { width: 12px; }
+        ::-webkit-scrollbar-track { background: var(--bg-section-alt); border-left: 1px solid var(--bg-card); }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--accent-gold-hover), var(--accent-gold));
+            border: 3px solid var(--bg-section-alt);
+            border-radius: 10px;
+        }
+        .container {
+            width: 100%;
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .text-center { text-align: center; }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-between { justify-content: space-between; }
+        .gap-4 { gap: 16px; }
+        main {
+            flex-grow: 1;
+            padding: 130px 0 80px 0;
+        }
+        .sc-heading {
+            text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0px 5px 0 rgba(0,0,0,0.6);
+        }
+        .text-gold { color: var(--accent-gold); }
+        .page-title { font-size: clamp(3rem, 6vw, 4.5rem); margin-bottom: 16px; }
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .title-underline {
+            width: 128px;
+            height: 8px;
+            background-color: var(--accent-gold);
+            margin: 24px auto 48px auto;
+            border-radius: 4px;
+            border: 1px solid var(--border-dark);
+            box-shadow: 0 2px 0 #000;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 12px;
+            border: 2px solid var(--border-dark);
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            cursor: pointer;
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+            text-transform: uppercase;
+        }
+        .btn:active { transform: translateY(6px); }
+        .btn-gold {
+            background: linear-gradient(to bottom, var(--accent-gold-hover), var(--accent-gold));
+            box-shadow: 0 6px 0 var(--accent-gold-shadow), 0 10px 10px rgba(0,0,0,0.5);
+        }
+        .btn-gold:active { box-shadow: 0 0px 0 var(--accent-gold-shadow), 0 4px 4px rgba(0,0,0,0.5); }
+        .btn-small {
+            background-color: var(--accent-blue);
+            color: white;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-family: var(--font-body);
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            text-shadow: none;
+        }
+        .btn-small:hover { background-color: var(--accent-blue-hover); }
+        .rules-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        .card {
+            background-color: var(--bg-card);
+            border: 3px solid var(--bg-section-alt);
+            border-radius: 16px;
             box-shadow: inset 0 3px 0 rgba(255,255,255,0.1), 0 8px 15px rgba(0,0,0,0.5);
-            position: relative; overflow: hidden;
+            overflow: hidden;
         }
-
-        .sc-card-header {
-            background: linear-gradient(to bottom, #334155, #1e293b);
-            border-bottom: 3px solid #0f172a; padding: 1.25rem;
+        .card.border-white { border-color: rgba(255,255,255,0.2); }
+        .card.border-red { border-color: rgba(127, 29, 29, 0.5); }
+        .card.border-green { border-color: rgba(250, 204, 21, 0.5); }
+        .card.border-blue { border-color: rgba(30, 58, 138, 0.5); }
+        .card.border-orange { border-color: rgba(124, 45, 18, 0.5); }
+        .card-header {
+            padding: 20px;
+            border-bottom: 3px solid var(--bg-section-alt);
+            display: flex;
+            align-items: center;
         }
-
-        .sc-btn {
-            display: inline-flex; align-items: center; justify-content: center;
-            font-family: 'Lilita One', cursive; text-transform: uppercase;
-            font-size: 1.25rem; color: white; padding: 0.75rem 2rem;
-            border-radius: 0.75rem; border: 2px solid #000;
-            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-            transition: all 0.1s ease; position: relative; cursor: pointer; text-decoration: none;
+        .card-header h2 { font-size: 1.5rem; margin-left: 8px; }
+        .header-white { background: linear-gradient(to bottom, rgba(255,255,255,0.1), var(--bg-card)); }
+        .header-red { background: linear-gradient(to bottom, rgba(127,29,29,0.4), var(--bg-card)); color: #fca5a5; }
+        .header-green { background: linear-gradient(to bottom, rgba(20,83,45,0.4), var(--bg-card)); color: #86efac; }
+        .header-blue { background: linear-gradient(to bottom, rgba(30,58,138,0.4), var(--bg-card)); }
+        .header-orange { background: linear-gradient(to bottom, rgba(124,45,18,0.4), var(--bg-card)); color: #fed7aa; }
+        .card-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
         }
-
-        .sc-btn-gold {
-            background: linear-gradient(to bottom, #fde047, #eab308);
-            box-shadow: 0 6px 0 #a16207, 0 10px 10px rgba(0,0,0,0.5);
+        .rule-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
         }
-
-        .sc-btn-blue {
-            background: linear-gradient(to bottom, #60a5fa, #3b82f6);
-            box-shadow: 0 6px 0 #1d4ed8, 0 10px 10px rgba(0,0,0,0.5);
-        }
-        .sc-btn-blue:active { transform: translateY(6px); box-shadow: 0 0px 0 #1d4ed8, 0 4px 4px rgba(0,0,0,0.5); }
-
         .rule-number {
-            width: 40px; height: 40px; 
-            background: #fbbf24; border: 2px solid #000;
-            display: flex; align-items: center; justify-content: center;
-            border-radius: 8px; font-family: 'Lilita One', cursive;
-            color: #000; flex-shrink: 0; box-shadow: 0 3px 0 #a16207;
+            width: 40px;
+            height: 40px;
+            background: var(--accent-gold);
+            border: 2px solid var(--border-dark);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            color: #000;
+            flex-shrink: 0;
+            box-shadow: 0 3px 0 var(--accent-gold-shadow);
+            font-size: 1.25rem;
         }
-
-        .nav-link {
-            font-family: 'Lilita One', cursive; text-transform: uppercase;
-            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-            transition: transform 0.2s, color 0.2s;
+        .rule-number.num-white { background: #fff; box-shadow: 0 3px 0 #9ca3af; }
+        .rule-number.num-red { background: var(--accent-red); box-shadow: 0 3px 0 #991b1b; color: #fff; }
+        .rule-number.num-green { background: var(--accent-green); box-shadow: 0 3px 0 #166534; color: #fff; }
+        .rule-number.num-blue { background: var(--accent-blue); box-shadow: 0 3px 0 #1e40af; color: #fff; }
+        .rule-content h3 {
+            font-family: var(--font-body);
+            font-weight: 800;
+            color: #fff;
+            font-size: 1.125rem;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            letter-spacing: 0;
+            text-shadow: none;
         }
-        .nav-link:hover { color: #fbbf24; transform: scale(1.1); }
+        .rule-content p {
+            color: #cbd5e1;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+        .text-link {
+            color: #fff;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+        .text-link:hover { color: var(--accent-green); }
+        .footer-note {
+            margin-top: 32px;
+            text-align: center;
+            color: #64748b;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
     </style>
 </head>
-<body class="antialiased min-h-screen flex flex-col">
+<body>
 
     <div id="navbar-container"></div>
 
-    <main class="flex-grow pt-32 pb-20">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <main>
+        <div class="container">
             
-            <div class="text-center mb-12">
-                <h1 class="sc-heading text-5xl md:text-7xl mb-4">CLAN <span class="sc-heading-gold">RULES</span></h1>
-                <p class="text-xl text-slate-300 font-bold uppercase tracking-widest">Grinderouz Official Code of Conduct</p>
-                <div class="w-32 h-2 bg-yellow-400 mx-auto mt-6 rounded-full border border-black shadow-[0_2px_0_#000]"></div>
+            <div class="text-center">
+                <h1 class="sc-heading page-title">CLAN <span class="text-gold">RULES</span></h1>
+                <p class="page-subtitle">Grinderouz Official Code of Conduct</p>
+                <div class="title-underline"></div>
             </div>
 
-            <div class="space-y-8">
+            <div class="rules-wrapper">
+                
                 <!-- Rules Agreement -->
-                <div class="sc-card border-white/50">
-                    <div class="sc-card-header flex items-center bg-gradient-to-b from-white/40 to-slate-800">
+                <div class="card border-white">
+                    <div class="card-header header-white">
                         <p data-emojis data-emoji-size="34px">:xp:</p>
-                        <h2 class="sc-heading text-2xl text-white">&nbsp;Rules Agreement</h2>
+                        <h2 class="sc-heading text-white">&nbsp;Rules Agreement</h2>
                     </div>
-                    <div class="p-6 space-y-6">
-                        <div class="flex gap-4">
-                            <div class="rule-number !bg-white !shadow-white-800">1</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">Activity is Key</h3>
-                                <p class="text-slate-300 font-bold">We value active players. While we understand life happens, extended periods of inactivity without notice may result in a demotion or being kicked from the clan to make room for active members.</p>
+                    <div class="card-body">
+                        <div class="rule-item">
+                            <div class="rule-number num-white">1</div>
+                            <div class="rule-content">
+                                <h3>Activity is Key</h3>
+                                <p>We value active players. While we understand life happens, extended periods of inactivity without notice may result in a demotion or being kicked from the clan to make room for active members.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="rule-number !bg-white !shadow-white-800">2</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">Removal Policy</h3>
-                                <p class="text-slate-300 font-bold">The leadership team reserves the right to kick any member at any time. We don't do this randomly; a reason will be provided (e.g., missed war attacks, toxic behavior, or consistent low donations).</p>
+                        <div class="rule-item">
+                            <div class="rule-number num-white">2</div>
+                            <div class="rule-content">
+                                <h3>Removal Policy</h3>
+                                <p>The leadership team reserves the right to kick any member at any time. We don't do this randomly; a reason will be provided (e.g., missed war attacks, toxic behavior, or consistent low donations).</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="rule-number !bg-white !shadow-white-800">3</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">Rule Evolution</h3>
-                                <p class="text-slate-300 font-bold">As the clan grows, our needs might change. We reserve the right to update or modify these rules at any time. We will do our best to post an announcement in the clan chat whenever a significant change is made.</p>
+                        <div class="rule-item">
+                            <div class="rule-number num-white">3</div>
+                            <div class="rule-content">
+                                <h3>Rule Evolution</h3>
+                                <p>As the clan grows, our needs might change. We reserve the right to update or modify these rules at any time. We will do our best to post an announcement in the clan chat whenever a significant change is made.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Community & Behavior -->
-                <div class="sc-card">
-                    <div class="sc-card-header flex items-center">
+                <div class="card">
+                    <div class="card-header">
                         <p data-emojis data-emoji-size="34px">:clan:</p>
-                        <h2 class="sc-heading text-2xl">&nbsp;Community & Behavior</h2>
+                        <h2 class="sc-heading text-white">&nbsp;Community & Behavior</h2>
                     </div>
-                    <div class="p-6 space-y-6">
-                        <div class="flex gap-4">
+                    <div class="card-body">
+                        <div class="rule-item">
                             <div class="rule-number">1</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">INACTIVITY</h3>
-                                <p class="text-slate-300 font-bold">Players inactive for 5 consecutive days without notifying leadership will be kicked.</p>
+                            <div class="rule-content">
+                                <h3>INACTIVITY</h3>
+                                <p>Players inactive for 5 consecutive days without notifying leadership will be kicked.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
+                        <div class="rule-item">
                             <div class="rule-number">2</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">Zero Tolerance Policy</h3>
-                                <p class="text-slate-300 font-bold">Harassment, racism, or excessive toxicity towards clan mates will result in an immediate kick. We are a family.</p>
+                            <div class="rule-content">
+                                <h3>Zero Tolerance Policy</h3>
+                                <p>Harassment, racism, or excessive toxicity towards clan mates will result in an immediate kick. We are a family.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
+                        <div class="rule-item">
                             <div class="rule-number">3</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">English Only</h3>
-                                <p class="text-slate-300 font-bold">To ensure effective communication during wars, please use English in the main clan chat.</p>
+                            <div class="rule-content">
+                                <h3>English Only</h3>
+                                <p>To ensure effective communication during wars, please use English in the main clan chat.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
+                        <div class="rule-item">
                             <div class="rule-number">4</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">No Rushed Bases</h3>
-                                <p class="text-slate-300 font-bold">When and during clan wars. Rushed bases is a easy target to stars and makes you less powerful.</p>
+                            <div class="rule-content">
+                                <h3>No Rushed Bases</h3>
+                                <p>When and during clan wars. Rushed bases is a easy target to stars and makes you less powerful.</p>
+                            </div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-number">5</div>
+                            <div class="rule-content">
+                                <h3>Ages</h3>
+                                <p>Members are required to be atleast 13yr of age. and Elders and Above should be over 18yrs of age.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- War Protocol -->
-                <div class="sc-card border-red-900/50">
-                    <div class="sc-card-header flex items-center bg-gradient-to-b from-red-900/40 to-slate-800">
+                <div class="card border-red">
+                    <div class="card-header header-red">
                         <p data-emojis data-emoji-size="34px">:warleag:</p>
-                        <h2 class="sc-heading text-2xl text-red-300">&nbsp;War Protocol</h2>
+                        <h2 class="sc-heading">&nbsp;War Protocol</h2>
                     </div>
-                    <div class="p-6 space-y-6">
-                        <div class="flex gap-4">
-                            <div class="rule-number !bg-red-500 !shadow-red-800">1</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">Use All Attacks</h3>
-                                <p class="text-slate-300 font-bold">If you are opted "In" for war, you MUST use both attacks. Missing attacks without prior notice will lead to a demotion or kick.</p>
+                    <div class="card-body">
+                        <div class="rule-item">
+                            <div class="rule-number num-red">1</div>
+                            <div class="rule-content">
+                                <h3>Use All Attacks</h3>
+                                <p>If you are opted "In" for war, you MUST use both attacks. Missing attacks without prior notice will lead to a demotion or kick.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="rule-number !bg-red-500 !shadow-red-800">2</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">Follow the Plan</h3>
-                                <p class="text-slate-300 font-bold">Check Clan Mail or Discord for specific targets. Do not attack for loot unless the war is mathematically won.</p>
+                        <div class="rule-item">
+                            <div class="rule-number num-red">2</div>
+                            <div class="rule-content">
+                                <h3>Follow the Plan</h3>
+                                <p>Check Clan Mail or Discord for specific targets. Do not attack for loot unless the war is mathematically won.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="rule-number !bg-red-500 !shadow-red-800">3</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">No Heroes, No War</h3>
-                                <p class="text-slate-300 font-bold">Standard wars require Heroes to be up.</p>
+                        <div class="rule-item">
+                            <div class="rule-number num-red">3</div>
+                            <div class="rule-content">
+                                <h3>No Heroes, No War</h3>
+                                <p>Standard wars require Heroes to be up.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Clan Games & Raids -->
-                <div class="sc-card border-yellow-400/50">
-                    <div class="sc-card-header flex items-center bg-gradient-to-b from-green-900/40 to-slate-800">
+                <div class="card border-green">
+                    <div class="card-header header-green">
                         <p data-emojis data-emoji-size="34px">:gold:</p>
-                        <h2 class="sc-heading text-2xl text-green-300">&nbsp;Clan Games & Raids</h2>
+                        <h2 class="sc-heading">&nbsp;Clan Games & Raids</h2>
                     </div>
-                    <div class="p-6 space-y-6">
-                        <div class="flex gap-4">
-                            <div class="rule-number !bg-green-500 !shadow-red-800">1</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">The Bare Minimum</h3>
-                                <p class="text-slate-300 font-bold">Minimum 1000 points required. We always aim for the top tier.</p>
+                    <div class="card-body">
+                        <div class="rule-item">
+                            <div class="rule-number num-green">1</div>
+                            <div class="rule-content">
+                                <h3>The Bare Minimum</h3>
+                                <p>Minimum 1000 points required. We always aim for the top tier.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="rule-number !bg-green-500 !shadow-red-800">2</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">Capital Raids</h3>
-                                <p class="text-slate-300 font-bold">Use all 5-6 attacks every weekend. Finish the district you start.</p>
+                        <div class="rule-item">
+                            <div class="rule-number num-green">2</div>
+                            <div class="rule-content">
+                                <h3>Capital Raids</h3>
+                                <p>Use all 5-6 attacks every weekend. Finish the district you start.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Donations & Requests -->
-                <div class="sc-card border-blue-900/50">
-                    <div class="sc-card-header flex items-center bg-gradient-to-b from-blue-900/40 to-slate-800">
+                <div class="card border-blue">
+                    <div class="card-header header-blue">
                         <p data-emojis data-emoji-size="34px">&nbsp;:troopdonations:</p>
-                        <h2 class="sc-heading text-2xl text-white-100">Donations & Requests</h2>
+                        <h2 class="sc-heading text-white">Donations & Requests</h2>
                     </div>
-                    <div class="p-6 space-y-6">
-                        <div class="flex gap-4">
-                            <div class="rule-number !bg-blue-500 !shadow-red-800">1</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">Read Before You Donate</h3>
-                                <p class="text-slate-300 font-bold">Always donate exactly what is requested.</p>
+                    <div class="card-body">
+                        <div class="rule-item">
+                            <div class="rule-number num-blue">1</div>
+                            <div class="rule-content">
+                                <h3>Read Before You Donate</h3>
+                                <p>Always donate exactly what is requested.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="rule-number !bg-blue-500 !shadow-red-800">2</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">Upgrading</h3>
-                                <p class="text-slate-300 font-bold">Strictly MAX level troops only for War CCs and War attacks.</p>
+                        <div class="rule-item">
+                            <div class="rule-number num-blue">2</div>
+                            <div class="rule-content">
+                                <h3>Upgrading</h3>
+                                <p>Strictly MAX level troops only for War CCs and War attacks.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="rule-number !bg-blue-500 !shadow-red-800">3</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">Ratios</h3>
-                                <p class="text-slate-300 font-bold">No strict ratios, but heavy leeching without giving back will result in a warning.</p>
+                        <div class="rule-item">
+                            <div class="rule-number num-blue">3</div>
+                            <div class="rule-content">
+                                <h3>Ratios</h3>
+                                <p>No strict ratios, but heavy leeching without giving back will result in a warning.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Discord Rules -->
-                <div class="sc-card border-blue-900/50">
-                    <div class="sc-card-header flex items-center justify-between bg-gradient-to-b from-blue-900/40 to-slate-800 pr-6">
+                <div class="card border-blue">
+                    <div class="card-header header-blue justify-between">
                         <div class="flex items-center">
                             <p data-emojis data-emoji-size="34px">:discord:</p>
-                            <h2 class="sc-heading text-2xl text-blue-300">&nbsp;Discord Rules</h2>
+                            <h2 class="sc-heading" style="color: #93c5fd;">&nbsp;Discord Rules</h2>
                         </div>
-                        <a data-emojis href="https://discord.com/invite/jEN9NNdA4v" target="_blank" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-1.5 px-4 rounded-md text-sm transition-colors shadow-md">
+                        <a data-emojis href="https://discord.com/invite/jEN9NNdA4v" target="_blank" class="btn-small">
                             Click Here!
                         </a>
                     </div>
-                    <div class="p-6 space-y-6">
-                        <div class="flex gap-4">
-                            <div class="rule-number !bg-blue-500 !shadow-red-800">1</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">Verification</h3>
-                                <p class="text-slate-300 font-bold">Unverified users cannot use bots or see core channels. Verify by being in the clan or requesting member role.</p>
+                    <div class="card-body">
+                        <div class="rule-item">
+                            <div class="rule-number num-blue">1</div>
+                            <div class="rule-content">
+                                <h3>Verification</h3>
+                                <p>Unverified users cannot use bots or see core channels. Verify by being in the clan or requesting member role.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="rule-number !bg-blue-500 !shadow-red-800">2</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">Stay on Topic</h3>
-                                <p class="text-slate-300 font-bold">Use specific channels (#base-designs, #bot-commands) for their intended purpose.</p>
+                        <div class="rule-item">
+                            <div class="rule-number num-blue">2</div>
+                            <div class="rule-content">
+                                <h3>Stay on Topic</h3>
+                                <p>Use specific channels (#base-designs, #bot-commands) for their intended purpose.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="rule-number !bg-blue-500 !shadow-red-800">3</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">Keep it Clean</h3>
-                                <p class="text-slate-300 font-bold">No NSFW content, intense politics, or religious debates. & No hate speech or toxicity. Banter is fine; harassment is an instant ban.</p>
+                        <div class="rule-item">
+                            <div class="rule-number num-blue">3</div>
+                            <div class="rule-content">
+                                <h3>Keep it Clean</h3>
+                                <p>No NSFW content, intense politics, or religious debates. & No hate speech or toxicity. Banter is fine; harassment is an instant ban.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="rule-number !bg-blue-500 !shadow-red-800">4</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">LOCKED-IN SERVER PROTECTION</h3>
-                                <p class="text-slate-300 font-bold">Members in our Discord who are a verified member will be protected from sudden kicks and will instead recieve warnings through the ProBot System.</p>
+                        <div class="rule-item">
+                            <div class="rule-number num-blue">4</div>
+                            <div class="rule-content">
+                                <h3>LOCKED-IN SERVER PROTECTION</h3>
+                                <p>Members in our Discord who are a verified member will be protected from sudden kicks and will instead recieve warnings through the ProBot System.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Rank & Promotions -->
-                <div class="sc-card border-orange-900/50">
-                    <div class="sc-card-header flex items-center bg-gradient-to-b from-orange-900/40 to-slate-800">
+                <div class="card border-orange">
+                    <div class="card-header header-orange">
                         <p data-emojis data-emoji-size="34px">:leader:</p>
-                        <h2 class="sc-heading text-2xl text-orange-200">&nbsp;Rank & Promotions</h2>
+                        <h2 class="sc-heading">&nbsp;Rank & Promotions</h2>
                     </div>
-                    <div class="p-6 space-y-6">
-                        <a class="text-white hover:text-green-400" href="https://forms.gle/K2QNWEMRjcSt6d4N7">Apply For a Elder Now!</a> <span> | </span>
-                        <a class="text-white hover:text-green-400" href="https://forms.gle/B3ufsw5Ez7xy1aGu7">Apply For a Co Leader Now!</a>
-                        <div class="flex gap-4">
-                            <div class="rule-number !bg-blue-500 !shadow-blue-800">1</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">Don't Ask for Ranks</h3>
-                                <p class="text-slate-300 font-bold">Elder and Co-Leader positions are earned through loyalty, activity, and high donation counts. Asking for rank decreases your chances.</p>
+                    <div class="card-body">
+                        <div style="font-weight: 700; color: #fff;">
+                            <a class="text-link" href="https://forms.gle/K2QNWEMRjcSt6d4N7">Apply For a Elder Now!</a> <span style="margin: 0 8px; color: #64748b;">|</span>
+                            <a class="text-link" href="https://forms.gle/B3ufsw5Ez7xy1aGu7">Apply For a Co Leader Now!</a>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-number num-blue">1</div>
+                            <div class="rule-content">
+                                <h3>Don't Ask for Ranks</h3>
+                                <p>Elder and Co-Leader positions are earned through loyalty, activity, and high donation counts. Asking for rank decreases your chances.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="rule-number !bg-blue-500 !shadow-blue-800">4</div>
-                            <div>
-                                <h3 class="font-black text-white text-lg uppercase">War & Strategy</h3>
-                                <p class="text-slate-300 font-bold">Please discuss wars with other elders and coleaders before starting it as their may be another plan. Do not start unless directed.</p>
+                        <div class="rule-item">
+                            <div class="rule-number num-blue">4</div>
+                            <div class="rule-content">
+                                <h3>War & Strategy</h3>
+                                <p>Please discuss wars with other elders and coleaders before starting it as their may be another plan. Do not start unless directed.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
 
-            <div class="mt-8 text-center text-slate-500 font-bold uppercase text-xs tracking-widest">
-              Last Updated: 5/17/2026 8:02PM <a class="text-white hover:text-green-400" href="https://discord.gg/jEN9NNdA4v">Have A Suggestion?</a>
+            <div class="card border-yellow" style="margin-top: 36px;">
+                <div class="card-header header-yellow">
+                    <p data-emojis data-emoji-size="34px">:cash-app:</p>
+                    <h2 class="sc-heading">&nbsp;Purchase Terms And Conditions</h2>
+                </div>
+                <div class="card-body" style="line-height: 1.6;">
+                    <h3 style="font-size: 1.22rem; margin-bottom: 12px; font-weight: 800; color: #eab308;">Terms And Conditions</h3>
+                    <ol style="margin-left: 1.5em; margin-bottom: 18px;">
+                        <li style="margin-bottom: 0.8em;">Payments must be sent only to the <strong>official Cash App Cashtag: stadiastudios.</strong> Payments sent to any other Cashtag won't be accepted.</li>
+                        <li style="margin-bottom: 0.8em;">After payment is confirmed, your online tier access will be given within 24 hours. Whenever the Leader Responds</li>
+                        <li style="margin-bottom: 0.8em;">All sales are final. No refunds or cancellations after payment.</li>
+                        <li style="margin-bottom: 0.8em;">Double-check the payment amount before sending to avoid delays.</li>
+                        <li style="margin-bottom: 0.8em;">If you have questions or issues, contact me before or after payment.</li>
+                        <li style="margin-bottom: 0.8em;">By purchasing Grinderouz online, you agree to these terms.</li>
+                        <li>Giveaways are purchased and given by how much fundings we currently have. If we’re short on funds the giveaway will be little. If we have more and more online members Giveaways will be bigger.</li>
+                    </ol>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 8px; color: #fbbf24;">How to Make a Purchase</h3>
+                    <p style="margin-bottom: 12px;">
+                        Purchases are done via cash app and through discord. You’ll firstly send the money or you can tag the user YoungDollazz/Mayo in the discord who is the leader. 
+                        Then send it afterwords. After payment is confirmed you’ll receive your role and your all set! On our end your name will be put in a data base with your last pay date to keep track of your subscription.
+                    </p>
+                    <p style="margin-bottom: 14px;">
+                        Before sending your money through make sure you know which tier your getting and how much your paying.
+                    </p>
+                    
+                    <h3 style="font-size: 1.07rem; margin-bottom:6px; color: #82e4b8;">APPLE PAY <span data-emojis data-emoji-size="25px">:apple-pay:</span> METHOD</h3>
+                    <p style="margin-bottom: 14px;">
+                        <strong>I do accept Apple Pay</strong> however before purchasing put in a ticket so I can give you my iCloud directly so I know who I'm giving my iCloud to.
+                    </p>
+                    <h3 style="font-size: 1.07rem; margin-bottom:6px; color: #22d3ee;">CASH APP <span data-emojis data-emoji-size="25px">:cash-app:</span> METHOD</h3>
+                    <p>
+                        <strong>I accept Cashapp</strong> and my username is <strong>stadiastudios</strong>. This is also our official and ONLY Grinderouz Funding account.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-note">
+              Last Updated: 7/18/2026 7:08PM <a class="text-link" style="margin-left: 8px;" href="https://discord.gg/jEN9NNdA4v">Have A Suggestion?</a>
             </div>
 
-            <div class="mt-12 text-center">
-                <a href="index.html" class="sc-btn sc-btn-gold">
-                    <i class="fa-solid fa-arrow-left mr-2"></i> Back to Home
+            <div class="text-center" style="margin-top: 48px;">
+                <a href="index.html" class="btn btn-gold">
+                    <i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i> Back to Home
                 </a>
             </div>
         </div>
     </main>
 
     <div id="footer-container"></div>
-
 
     <script src="uptoggle.js"></script>
     <script src="emojis.js"></script>

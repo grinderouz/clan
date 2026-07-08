@@ -1,4 +1,5 @@
 (function() {
+    // Define normal CSS for the scroll-to-top button (no Tailwind)
     const styles = `
         #clash-scroll-top {
             position: fixed;
@@ -12,13 +13,11 @@
             cursor: pointer;
             user-select: none;
         }
-
         #clash-scroll-top.show {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-
         .clash-up-btn {
             display: flex;
             align-items: center;
@@ -31,22 +30,21 @@
             box-shadow: 0 6px 0 #a16207, 0 10px 15px rgba(0,0,0,0.4);
             transition: all 0.1s ease;
         }
-
-        .clash-up-btn i {
-            font-size: 24px;
+        .clash-up-btn .arrow-icon {
+            width: 26px;
+            height: 26px;
+            display: block;
             color: white;
-            filter: drop-shadow(-1px -1px 0 #000) 
-                    drop-shadow(1px -1px 0 #000) 
-                    drop-shadow(-1px 1px 0 #000) 
+            filter: drop-shadow(-1px -1px 0 #000)
+                    drop-shadow(1px -1px 0 #000)
+                    drop-shadow(-1px 1px 0 #000)
                     drop-shadow(1px 1px 0 #000);
             transform: translateY(-2px);
         }
-
         .clash-up-btn:active {
             transform: translateY(4px);
             box-shadow: 0 2px 0 #a16207, 0 4px 8px rgba(0,0,0,0.4);
         }
-        
         @media (max-width: 640px) {
             #clash-scroll-top {
                 bottom: 20px;
@@ -56,6 +54,10 @@
                 width: 48px;
                 height: 48px;
             }
+            .clash-up-btn .arrow-icon {
+                width: 20px;
+                height: 20px;
+            }
         }
     `;
 
@@ -63,11 +65,14 @@
     styleSheet.innerText = styles;
     document.head.appendChild(styleSheet);
 
+    // No Tailwind or icon font: use SVG for the up arrow
     const btnContainer = document.createElement('div');
     btnContainer.id = 'clash-scroll-top';
     btnContainer.innerHTML = `
         <div class="clash-up-btn">
-            <i class="fa-solid fa-arrow-up"></i>
+            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="white">
+                <path d="M14 22V6M14 6l-8 8M14 6l8 8" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
         </div>
     `;
     document.body.appendChild(btnContainer);
