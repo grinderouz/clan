@@ -337,12 +337,24 @@
                     </div>
                     <div class="card stat-card">
                         <div class="stat-label">Trophies</div>
-                        <div class="sc-heading stat-value text-gold"><i class="fa-solid fa-trophy" style="font-size: 0.8em;"></i> 24,400+</div>
+                        <div class="sc-heading stat-value text-gold"><i class="fa-solid fa-trophy" style="font-size: 0.8em;"></i> 25,300+</div>
                     </div>
                     <div class="card stat-card">
                         <div class="stat-label">Total Wars</div>
-                        <div data-emojis data-emoji-size="40px" class="sc-heading stat-value">:clan: 15</div>
+                        <div data-emojis data-emoji-size="40px" class="sc-heading stat-value">:clan: 16</div>
                     </div>
+                    <a href="online.html">
+                        <div class="card stat-card">
+                            <div class="stat-label">Online Subscribers</div>
+                            <div id="online-subscribers-count" class="sc-heading stat-value">--</div>
+                        </div>
+                    </a>
+                    <a href="https://discord.gg/jEN9NNdA4v">
+                    <div class="card stat-card">
+                        <div class="stat-label">JOIN SERVER</div>
+                        <div data-emojis data-emoji-size="40px" class="sc-heading stat-value">:discord: CLICK</div>
+                    </div>
+                    </a>
                 </div>
             </div>
         </header>
@@ -607,6 +619,23 @@
                 toast.style.pointerEvents = 'none';
             }, 3000);
         };
+
+        // Fetch online.html and get the subscriber count
+                        fetch('online.html')
+                          .then(response => response.text())
+                          .then(html => {
+                              // Try to extract the JS SUBSCRIBERS array definition
+                              const match = html.match(/const\s+SUBSCRIBERS\s*=\s*(\[[\s\S]+?\]);/);
+                              if (match) {
+                                  try {
+                                      // Safely parse the array
+                                      const arr = eval(match[1]);
+                                      if (Array.isArray(arr)) {
+                                          document.getElementById('online-subscribers-count').innerHTML = '' + arr.length;
+                                      }
+                                  } catch(e){}
+                              }
+                          });
     </script>
 </body>
 </html>
