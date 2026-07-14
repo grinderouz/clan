@@ -230,9 +230,13 @@ const FooterComponent = `
                 <span class="footer-brand-text">GRINDEROUZ</span>
             </div>
             <div class="footer-links">
+            <span>| Supercell</span>
                 <a href="https://store.supercell.com/" target="_blank" class="footer-link">Supercell Store</a>
                 <a href="https://supercell.com/en/supercell-id/" target="_blank" class="footer-link">Supercell ID</a>
-                <a href="https://discord.gg/jEN9NNdA4v" class="footer-link">Community</a>
+                <span>| Grinderouz</span>
+                <a href="https://discord.gg/jEN9NNdA4v" class="footer-link">Discord</a>
+                <a href="online.html" class="footer-link">Online</a>
+                <a href="https://www.youtube.com/@Grinderouz223" target="_blank" class="footer-link">YouTube</a>
             </div>
             <div class="footer-copy">
                 <p>&copy; 2025-2026 Grinderouz223 Clan. All rights reserved.</p>
