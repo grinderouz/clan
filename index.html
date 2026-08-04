@@ -343,12 +343,6 @@
                         <div class="stat-label">Total Wars</div>
                         <div data-emojis data-emoji-size="40px" class="sc-heading stat-value">:clan: 16</div>
                     </div>
-                    <a href="online.html">
-                        <div class="card stat-card">
-                            <div class="stat-label">Online Subscribers</div>
-                            <div id="online-subscribers-count" class="sc-heading stat-value">--</div>
-                        </div>
-                    </a>
                     <a href="https://discord.gg/jEN9NNdA4v">
                     <div class="card stat-card">
                         <div class="stat-label">JOIN SERVER</div>
@@ -417,7 +411,7 @@
                         </div>
                         <div class="card-body">
                             <ul class="rule-list">
-                                <li><div class="rule-number">1</div> Town Hall 8+ or up.</li>
+                                <li><div class="rule-number">1</div> Town Hall 10+ or up.</li>
                                 <li><div class="rule-number">2</div> Non-rushed bases/accounts only.</li>
                                 <li><div class="rule-number">3</div> Must be active in events.</li>
                                 <li><div class="rule-number">4</div> Required League: Skeleton 2.</li>
@@ -435,7 +429,7 @@
                             <ul>
                                 <li class="rule-text-wrap">
                                     <i class="fa-solid fa-xmark rule-cross"></i>
-                                    <div><span style="color: #fff; font-weight: 700;">The Inactivity Limit:</span> Players inactive for 14 consecutive days without notifying leadership will be kicked.</div>
+                                    <div><span style="color: #fff; font-weight: 700;">The Inactivity Limit:</span> Players inactive for 5 consecutive days without notifying leadership will be kicked.</div>
                                 </li>
                                 <li class="rule-text-wrap">
                                     <i class="fa-solid fa-xmark rule-cross"></i>
@@ -480,7 +474,16 @@
                         </div>
                         <h3 class="sc-heading leader-name">MAYO</h3>
                         <div class="leader-role gold">Leader</div>
-                        <div class="leader-xp"><span data-emojis>:online-ultimate: :xp:</span> 76+</div>
+                        <div class="leader-xp"><span data-emojis>:xp:</span> 76+</div>
+                    </div>
+                    
+                    <div class="card leader-card card-body">
+                        <div class="leader-icon-box tier-2">
+                            <i data-emojis data-emoji-size="40px">:colead:</i>
+                        </div>
+                        <h3 class="sc-heading leader-name">ITZDRAKO</h3>
+                        <div class="leader-role silver">Co-Leader</div>
+                        <div class="leader-xp"><span data-emojis>:xp:</span> 84+</div>
                     </div>
                     
                     <div class="card leader-card card-body">
@@ -499,15 +502,6 @@
                         <h3 class="sc-heading leader-name">VANLONG</h3>
                         <div class="leader-role bronze">ELDER</div>
                         <div class="leader-xp"><span data-emojis>:xp:</span> 69+</div>
-                    </div>
-
-                    <div class="card leader-card card-body">
-                        <div class="leader-icon-box tier-3">
-                            <i data-emojis data-emoji-size="40px">:elder:</i>
-                        </div>
-                        <h3 class="sc-heading leader-name">JAWS</h3>
-                        <div class="leader-role bronze">ELDER</div>
-                        <div class="leader-xp"><span data-emojis>:online-ultimate: :xp:</span> 67+</div>
                     </div>
                     
                     <div class="card leader-card card-body">
@@ -567,7 +561,7 @@
                         </button>
                     </a>
                     <p style="margin-top: 24px; font-size: 0.9rem; font-weight: 700; color: #94a3b8;">
-                        Clan Tag: #2JU29J22P | Req: TH8+ & Skeleton 2 Rank
+                        Clan Tag: #2JU29J22P | Req: TH10+ & Skeleton 2 Rank
                     </p>
                 </div>
             </div>
@@ -598,23 +592,6 @@
                 toast.style.pointerEvents = 'none';
             }, 3000);
         };
-
-        // Fetch online.html and get the subscriber count
-                        fetch('online.html')
-                          .then(response => response.text())
-                          .then(html => {
-                              // Try to extract the JS SUBSCRIBERS array definition
-                              const match = html.match(/const\s+SUBSCRIBERS\s*=\s*(\[[\s\S]+?\]);/);
-                              if (match) {
-                                  try {
-                                      // Safely parse the array
-                                      const arr = eval(match[1]);
-                                      if (Array.isArray(arr)) {
-                                          document.getElementById('online-subscribers-count').innerHTML = '' + arr.length;
-                                      }
-                                  } catch(e){}
-                              }
-                          });
     </script>
 </body>
 </html>

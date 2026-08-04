@@ -21,11 +21,6 @@ const EmojiSystem = (() => {
         "colead": "assets/emojis/co-lead.png",
         "elder": "assets/emojis/elder.png",
         "blacklist": "assets/emojis/blacklisted.png",
-        "online-basic": "assets/emojis/online-basic.png",
-        "online-ultimate": "assets/emojis/online-ultimate.png",
-        "online-creators": "assets/emojis/online-creators.png",
-        "apple-pay": "assets/emojis/apple-pay.png",
-        "cash-app": "assets/emojis/cash-app.png",
     };
 
     const DEFAULT_SIZE = "22px";

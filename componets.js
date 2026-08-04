@@ -205,7 +205,6 @@ const NavbarComponent = `
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="#rules" class="nav-link">Rules</a>
                 <a href="#leadership" class="nav-link">Leadership</a>
-                <a href="online.html" class="nav-link">Online</a>
                 <a href="#join" class="nav-link discord-link">Discord</a>
             </div>
             <button id="mobile-menu-btn" class="nav-mobile-toggle">
@@ -216,7 +215,6 @@ const NavbarComponent = `
             <a href="index.html" class="mobile-nav-link">Home</a>
             <a href="#rules" class="mobile-nav-link">Rules</a>
             <a href="#leadership" class="mobile-nav-link">Leadership</a>
-            <a href="online.html" class="mobile-nav-link">Online</a>
             <a href="#join" class="mobile-nav-link discord-link">Join Discord</a>
         </div>
     </nav>
@@ -235,7 +233,6 @@ const FooterComponent = `
                 <a href="https://supercell.com/en/supercell-id/" target="_blank" class="footer-link">Supercell ID</a>
                 <span>| Grinderouz</span>
                 <a href="https://discord.gg/jEN9NNdA4v" class="footer-link">Discord</a>
-                <a href="online.html" class="footer-link">Online</a>
                 <a href="https://www.youtube.com/@Grinderouz223" target="_blank" class="footer-link">YouTube</a>
             </div>
             <div class="footer-copy">
